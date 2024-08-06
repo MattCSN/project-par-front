@@ -1,0 +1,58 @@
+const [golf, setGolf] = useState(null);
+const [courses, setCourses] = useState([]);
+const [holes, setHoles] = useState([]);
+const [tees, setTees] = useState([]);
+const [editDialogVisible, setEditDialogVisible] = useState(false);
+const [editData, setEditData] = useState({});
+
+<Button label="Retour à la page d'accueil" icon="pi pi-arrow-left" onClick={() => navigate('/')} />
+<Card title={golf.name}
+      subTitle={`${golf.country ? golf.country
+      : 'unknown postalCode'}, ${golf.postalCode ? golf.postalCode : 'unknown postalCode'} ${golf.city ? golf.city : 'unknown city'}`}>
+<p><strong>Google Map Links:</strong> <a href={golf.googleMapLinks} target="_blank" rel="noopener noreferrer">{golf.googleMapLinks}</a>
+</p>
+<Button label="Edit" icon="pi pi-pencil" onClick={handleEditClick}/>
+<TabView>
+    {courses.map(course => (
+    <TabPanel key={course.id} header={course.name}>
+        <DataTable value={course.holes}>
+            <Column field="HoleNumber" header="Hole Number"/>
+            <Column field="Par" header="Par"/>
+            <Column field="tees" header="Tees" body={rowData
+            => (
+            <ul>
+                {tees.map(tee => (
+                <li key={tee.id}>{tee.Color}: {tee.Distance} meters</li>
+                ))}
+            </ul>
+            )} />
+        </DataTable>
+    </TabPanel>
+    ))}
+</TabView>
+</Card>
+) : (
+<div>Loading...</div>
+)}
+<Dialog header="Edit Golf Details" visible={editDialogVisible} onHide={() => setEditDialogVisible(false)}>
+<div className="p-fluid">
+    <div className="p-field">
+        <label htmlFor="name">Name</label>
+        <InputText id="name" name="name" value={editData.name} onChange={handleEditChange}/>
+    </div>
+    <div className="p-field">
+        <label htmlFor="country">Country</label>
+        <InputText id="country" name="country" value={editData.country} onChange={handleEditChange}/>
+    </div>
+    <div className="p-field">
+        <label htmlFor="postalCode">Postal Code</label>
+        <InputText id="postalCode" name="postalCode" value={editData.postalCode} onChange={handleEditChange}/>
+    </div>
+    <div className="p-field">
+        <label htmlFor="city">City</label>
+        <InputText id="city" name="city" value={editData.city} onChange={handleEditChange}/>
+    </div>
+    <Button label="Save" icon="pi pi-check" onClick={handleEditSubmit}/>
+</div>
+</Dialog>
+</div>

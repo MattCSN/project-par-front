@@ -1,0 +1,21 @@
+.golf-details-page {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+}
+
+.golf-details-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.p-card {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.p-datatable {
+    margin-top: 20px;
+}

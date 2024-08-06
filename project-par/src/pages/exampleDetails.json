@@ -1,0 +1,242 @@
+{
+  "id": "f195deac-9df3-4f61-9721-cba4b06fc37b",
+  "createdAt": "2024-08-04T21:09:53.188765+02:00",
+  "updatedAt": "2024-08-04T21:09:53.188765+02:00",
+  "name": "Murtoli Golf links",
+  "city": "",
+  "postalCode": "",
+  "country": "France",
+  "googleMapLinks": "https://maps.google.com/?q=Murtoli Golf links",
+  "latitude": 41.52063094676539,
+  "longitude": 8.942603230802792,
+  "courses": [
+    {
+      "id": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+      "createdAt": "2024-08-04T21:09:53.189167+02:00",
+      "updatedAt": "2024-08-04T21:09:53.189167+02:00",
+      "name": "unnamed Course n°1",
+      "num_holes": 12,
+      "compact": false,
+      "pitch_and_putt": false,
+      "golf_id": "f195deac-9df3-4f61-9721-cba4b06fc37b",
+      "holes": [
+        {
+          "id": "738249cf-44f4-48c5-817d-41e948422e07",
+          "createdAt": "2024-08-04T21:09:53.189525+02:00",
+          "updatedAt": "2024-08-04T21:09:53.189525+02:00",
+          "HoleNumber": 1,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "14e2447c-92d2-40da-b5c8-d32975919f3f",
+              "createdAt": "2024-08-04T21:09:53.189756+02:00",
+              "updatedAt": "2024-08-04T21:09:53.189756+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "738249cf-44f4-48c5-817d-41e948422e07"
+            }
+          ]
+        },
+        {
+          "id": "735e3d11-6463-4557-9b01-adaa30f37dce",
+          "createdAt": "2024-08-04T21:09:53.189971+02:00",
+          "updatedAt": "2024-08-04T21:09:53.189971+02:00",
+          "HoleNumber": 2,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "8229b167-da4a-4074-8f1c-32851153abc9",
+              "createdAt": "2024-08-04T21:09:53.190199+02:00",
+              "updatedAt": "2024-08-04T21:09:53.190199+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "735e3d11-6463-4557-9b01-adaa30f37dce"
+            }
+          ]
+        },
+        {
+          "id": "82f1edd4-b0ff-4a6f-be05-d77f215bad1c",
+          "createdAt": "2024-08-04T21:09:53.190443+02:00",
+          "updatedAt": "2024-08-04T21:09:53.190443+02:00",
+          "HoleNumber": 3,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "929f890b-31d2-42ad-bf44-46224ecacf75",
+              "createdAt": "2024-08-04T21:09:53.190668+02:00",
+              "updatedAt": "2024-08-04T21:09:53.190668+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "82f1edd4-b0ff-4a6f-be05-d77f215bad1c"
+            }
+          ]
+        },
+        {
+          "id": "7be7d13f-b0a2-41b2-b9a0-76da6bd9d2bc",
+          "createdAt": "2024-08-04T21:09:53.190894+02:00",
+          "updatedAt": "2024-08-04T21:09:53.190894+02:00",
+          "HoleNumber": 4,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "60f71e41-0d79-400d-a6ba-a03e6b800bd7",
+              "createdAt": "2024-08-04T21:09:53.191112+02:00",
+              "updatedAt": "2024-08-04T21:09:53.191112+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "7be7d13f-b0a2-41b2-b9a0-76da6bd9d2bc"
+            }
+          ]
+        },
+        {
+          "id": "5fba2a89-8d1f-48b3-bc4f-c1baecea5ca1",
+          "createdAt": "2024-08-04T21:09:53.191327+02:00",
+          "updatedAt": "2024-08-04T21:09:53.191327+02:00",
+          "HoleNumber": 5,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "41c3fd80-72d9-48f7-868c-07e84732d360",
+              "createdAt": "2024-08-04T21:09:53.191529+02:00",
+              "updatedAt": "2024-08-04T21:09:53.191529+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "5fba2a89-8d1f-48b3-bc4f-c1baecea5ca1"
+            }
+          ]
+        },
+        {
+          "id": "9785d796-db19-48dd-a9ea-2c142f38c499",
+          "createdAt": "2024-08-04T21:09:53.191775+02:00",
+          "updatedAt": "2024-08-04T21:09:53.191775+02:00",
+          "HoleNumber": 6,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "bfd0c807-7f51-430c-8363-cc3a21de9a6b",
+              "createdAt": "2024-08-04T21:09:53.191981+02:00",
+              "updatedAt": "2024-08-04T21:09:53.191981+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "9785d796-db19-48dd-a9ea-2c142f38c499"
+            }
+          ]
+        },
+        {
+          "id": "9c25c58b-fc1e-49c3-82e5-381523048885",
+          "createdAt": "2024-08-04T21:09:53.19225+02:00",
+          "updatedAt": "2024-08-04T21:09:53.19225+02:00",
+          "HoleNumber": 7,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "174df729-4d77-4908-962b-3e1c80213b46",
+              "createdAt": "2024-08-04T21:09:53.19247+02:00",
+              "updatedAt": "2024-08-04T21:09:53.19247+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "9c25c58b-fc1e-49c3-82e5-381523048885"
+            }
+          ]
+        },
+        {
+          "id": "a126c7de-9e76-4a24-a5f4-f50e37419d36",
+          "createdAt": "2024-08-04T21:09:53.192703+02:00",
+          "updatedAt": "2024-08-04T21:09:53.192703+02:00",
+          "HoleNumber": 8,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "51dc126a-32f7-4d7b-a5ff-1fa6c97c4048",
+              "createdAt": "2024-08-04T21:09:53.192926+02:00",
+              "updatedAt": "2024-08-04T21:09:53.192926+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "a126c7de-9e76-4a24-a5f4-f50e37419d36"
+            }
+          ]
+        },
+        {
+          "id": "c1abcc0d-53cb-426b-8c6e-26c61c8e7ade",
+          "createdAt": "2024-08-04T21:09:53.193156+02:00",
+          "updatedAt": "2024-08-04T21:09:53.193156+02:00",
+          "HoleNumber": 9,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "ef4502a6-c4cd-49e3-a581-1b01747f06c5",
+              "createdAt": "2024-08-04T21:09:53.193387+02:00",
+              "updatedAt": "2024-08-04T21:09:53.193387+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "c1abcc0d-53cb-426b-8c6e-26c61c8e7ade"
+            }
+          ]
+        },
+        {
+          "id": "9667979c-6244-4e6e-a93d-24c94224cbe2",
+          "createdAt": "2024-08-04T21:09:53.193646+02:00",
+          "updatedAt": "2024-08-04T21:09:53.193646+02:00",
+          "HoleNumber": 10,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "4079c2bb-e8dc-46ba-9bae-13f7ecb75822",
+              "createdAt": "2024-08-04T21:09:53.193887+02:00",
+              "updatedAt": "2024-08-04T21:09:53.193887+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "9667979c-6244-4e6e-a93d-24c94224cbe2"
+            }
+          ]
+        },
+        {
+          "id": "c150305c-20f3-420f-b104-529c928ac170",
+          "createdAt": "2024-08-04T21:09:53.194122+02:00",
+          "updatedAt": "2024-08-04T21:09:53.194122+02:00",
+          "HoleNumber": 11,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "1acfe5ee-8793-45ee-9339-26c360761f38",
+              "createdAt": "2024-08-04T21:09:53.19435+02:00",
+              "updatedAt": "2024-08-04T21:09:53.19435+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "c150305c-20f3-420f-b104-529c928ac170"
+            }
+          ]
+        },
+        {
+          "id": "f2b5a3a9-18a5-4248-8ed0-f3ff369d0be8",
+          "createdAt": "2024-08-04T21:09:53.194588+02:00",
+          "updatedAt": "2024-08-04T21:09:53.194588+02:00",
+          "HoleNumber": 12,
+          "Par": 0,
+          "CourseID": "520b5f1a-f310-4035-8504-1dcd125c2d4e",
+          "tees": [
+            {
+              "id": "56e5ae3a-c1b5-40cf-9a1a-0ab336f3cf9d",
+              "createdAt": "2024-08-04T21:09:53.194813+02:00",
+              "updatedAt": "2024-08-04T21:09:53.194813+02:00",
+              "Color": "colorless",
+              "Distance": 0,
+              "HoleID": "f2b5a3a9-18a5-4248-8ed0-f3ff369d0be8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
