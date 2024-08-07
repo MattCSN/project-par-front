@@ -4,7 +4,7 @@ import App from './App.jsx'; // Assurez-vous que le chemin est correct
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <App/>
     </React.StrictMode>,
     document.getElementById('root')
 );

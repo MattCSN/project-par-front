@@ -1,76 +1,106 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React, {useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
-import {Card} from 'primereact/card';
-import {DataTable} from 'primereact/datatable';
-import {Column} from 'primereact/column';
 import {Button} from 'primereact/button';
-import './GolfDetailsPage.css';
+import {Card} from 'primereact/card';
+import {Column} from 'primereact/column';
+import {DataTable} from 'primereact/datatable';
 import {TabPanel, TabView} from 'primereact/tabview';
-import {Dialog} from "primereact/dialog";
-import {InputText} from "primereact/inputtext";
+import PropTypes from 'prop-types';
+
+import EditCourseDialog from '../components/EditCourseDialog';
+import EditGolfDialog from '../components/EditGolfDialog';
+import TeeColorDialog from '../components/TeeColorDialog';
+import useGolfDetails from '../hooks/useGolfDetails';
+import {createTees, deleteTee, updateCourse, updateGolf, updateTee} from '../services/apiService';
+
+import './GolfDetailsPage.css';
 
 const GolfDetailsPage = () => {
     const {id} = useParams();
     const navigate = useNavigate();
-    const [golf, setGolf] = useState(null);
-    const [courses, setCourses] = useState([]);
-    const [holes, setHoles] = useState([]);
-    const [tees, setTees] = useState([]);
-    const [editDialogVisible, setEditDialogVisible] = useState(false);
-    const [editData, setEditData] = useState({});
+    const {golf, courses, holes, tees, setGolf, setCourses, setHoles, setTees} = useGolfDetails(id);
 
-    useEffect(() => {
-        const fetchGolfDetails = async () => {
-            try {
-                const detailsResponse = await axios.get(`http://localhost:8080/v1/golfs/${id}`);
-                setGolf(detailsResponse.data);
+    const [dialogState, setDialogState] = useState({
+        editDialogVisible: false,
+        courseEditDialogVisible: false,
+        teeColorDialogVisible: false,
+        editTeeDialogVisible: false,
+        editData: {},
+        courseEditData: {},
+        selectedTeeColors: [],
+        selectedTee: null,
+        selectedCourseId: null,
+    });
 
-                const coursesResponse = await axios.get(`http://localhost:8080/v1/golfs/${id}/courses`);
-                setCourses(coursesResponse.data);
-
-                const holesPromises = coursesResponse.data.map(course =>
-                    axios.get(`http://localhost:8080/v1/courses/${course.id}/holes?pageSize=18`)
-                );
-                const holesResponses = await Promise.all(holesPromises);
-                const allHoles = holesResponses.flatMap(response => response.data);
-                setHoles(allHoles);
-
-                const teesPromises = allHoles.map(hole =>
-                    axios.get(`http://localhost:8080/v1/holes/${hole.id}/tees`)
-                );
-                const teesResponses = await Promise.all(teesPromises);
-                const allTees = teesResponses.flatMap(response => response.data);
-                setTees(allTees);
-            } catch (error) {
-                console.error('Error fetching golf details:', error);
-            }
-        };
-
-        fetchGolfDetails();
-    }, [id]);
-
-    const handleEditClick = () => {
-        setEditData(golf);
-        setEditDialogVisible(true);
-    };
-
-
-    const handleEditChange = (e) => {
-        const {name, value} = e.target;
-        setEditData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-
+    const handleEditClick = () => setDialogState({...dialogState, editData: golf, editDialogVisible: true});
+    const handleEditChange = (e) => setDialogState({
+        ...dialogState,
+        editData: {...dialogState.editData, [e.target.name]: e.target.value}
+    });
     const handleEditSubmit = async () => {
         try {
-            const response = await axios.patch(`http://localhost:8080/v1/golfs/${id}`, editData);
+            const response = await updateGolf(id, dialogState.editData);
             setGolf(response.data);
-            setEditDialogVisible(false);
+            setDialogState({...dialogState, editDialogVisible: false});
         } catch (error) {
             console.error('Error updating golf details:', error);
+        }
+    };
+
+    const handleCourseEditClick = (course) => setDialogState({
+        ...dialogState,
+        courseEditData: course,
+        courseEditDialogVisible: true
+    });
+    const handleCourseEditChange = (e) => setDialogState({
+        ...dialogState,
+        courseEditData: {...dialogState.courseEditData, [e.target.name]: e.target.value}
+    });
+    const handleCourseEditSubmit = async () => {
+        try {
+            const response = await updateCourse(dialogState.courseEditData.id, dialogState.courseEditData);
+            setCourses(prevCourses => prevCourses.map(course => course.id === response.data.id ? response.data : course));
+            setDialogState({...dialogState, courseEditDialogVisible: false});
+        } catch (error) {
+            console.error('Error updating course details:', error);
+        }
+    };
+
+    const handleTeeColorSelect = (courseId) => setDialogState({
+        ...dialogState,
+        selectedCourseId: courseId,
+        teeColorDialogVisible: true
+    });
+    const handleTeeColorChange = (e) => {
+        const selectedColors = e.checked ? [...dialogState.selectedTeeColors, e.value] : dialogState.selectedTeeColors.filter(color => color !== e.value);
+        setDialogState({...dialogState, selectedTeeColors: selectedColors});
+    };
+    const handleTeeColorSubmit = async () => {
+        try {
+            const newTees = await Promise.all(dialogState.selectedTeeColors.map(color => createTees(dialogState.selectedCourseId, color)));
+            setTees(prevTees => [...prevTees, ...newTees.flatMap(response => response.data)]);
+            setDialogState({...dialogState, teeColorDialogVisible: false});
+        } catch (error) {
+            console.error("Error submitting tee color:", error);
+        }
+    };
+
+    const handleDeleteTee = async (teeId) => {
+        try {
+            await deleteTee(teeId);
+            setTees(prevTees => prevTees.filter(tee => tee.id !== teeId));
+        } catch (error) {
+            console.error('Error deleting tee:', error);
+        }
+    };
+
+    const handleEditTeeSubmit = async () => {
+        try {
+            await updateTee(dialogState.selectedTee.id, dialogState.selectedTee);
+            setTees(prevTees => prevTees.map(tee => (tee.id === dialogState.selectedTee.id ? dialogState.selectedTee : tee)));
+            setDialogState({...dialogState, editTeeDialogVisible: false});
+        } catch (error) {
+            console.error('Error editing tee:', error);
         }
     };
 
@@ -78,9 +108,9 @@ const GolfDetailsPage = () => {
         <div className="golf-details-page">
             <h1>Golf Details Page</h1>
             <Button label="Retour à la page d'accueil" icon="pi pi-arrow-left" onClick={() => navigate('/')}/>
-            <Button label="Modifier" icon="pi pi-pencil" onClick={handleEditClick}/>
             {golf && (
                 <Card title={golf.name}>
+                    <Button label="Modifier les détails du golf" icon="pi pi-pencil" onClick={handleEditClick}/>
                     <p>Country: {golf.country}</p>
                     <p>City: {golf.city}</p>
                     <p>Postal Code: {golf.postalCode}</p>
@@ -88,13 +118,21 @@ const GolfDetailsPage = () => {
                     <TabView>
                         {courses.map(course => (
                             <TabPanel key={course.id} header={course.name}>
+                                <Button label="Renommer le parcours" icon="pi pi-pencil"
+                                        onClick={() => handleCourseEditClick(course)}/>
+                                <Button label="Ajouter une couleur de départ" icon="pi pi-plus"
+                                        onClick={() => handleTeeColorSelect(course.id)}/>
                                 <DataTable value={holes.filter(hole => hole.CourseID === course.id)}>
                                     <Column field="HoleNumber" header="Hole Number"/>
                                     <Column field="Par" header="Par"/>
-                                    <Column field="tees" header="Tees" body={rowData => (
+                                    <Column field="Tees" header="Tees" body={rowData => (
                                         <ul>
                                             {tees.filter(tee => tee.HoleID === rowData.id).map(tee => (
-                                                <li key={tee.id}>{tee.Color}: {tee.Distance} meters</li>
+                                                <li key={tee.id}>
+                                                    {tee.Color}: {tee.Distance} meters
+                                                    <Button icon="pi pi-trash" className="p-button-danger"
+                                                            onClick={() => handleDeleteTee(tee.id)}/>
+                                                </li>
                                             ))}
                                         </ul>
                                     )}/>
@@ -102,27 +140,29 @@ const GolfDetailsPage = () => {
                             </TabPanel>
                         ))}
                     </TabView>
-                    <Dialog header={`Modifier les détails du golf : ${editData.name}`} visible={editDialogVisible}
-                            onHide={() => setEditDialogVisible(false)}>
-                        <div className="p-fluid">
-                            <div className="p-field">
-                                <label htmlFor="city">Ville</label>
-                                <InputText id="city" name="city" value={editData.city || ''}
-                                           onChange={handleEditChange}/>
-                            </div>
-                            <div className="p-field">
-                                <label htmlFor="postalCode">Code Postal</label>
-                                <InputText id="postalCode" name="postalCode" value={editData.postalCode || ''}
-                                           onChange={handleEditChange}/>
-                            </div>
-                            <Button label="Enregistrer" icon="pi pi-check" onClick={handleEditSubmit}/>
-                        </div>
-                    </Dialog>
+                    <EditGolfDialog dialogState={dialogState} setDialogState={setDialogState}
+                                    handleEditChange={handleEditChange} handleEditSubmit={handleEditSubmit}/>
+                    <EditCourseDialog dialogState={dialogState} setDialogState={setDialogState}
+                                      handleCourseEditChange={handleCourseEditChange}
+                                      handleCourseEditSubmit={handleCourseEditSubmit}/>
+                    <TeeColorDialog dialogState={dialogState} setDialogState={setDialogState}
+                                    handleTeeColorChange={handleTeeColorChange}
+                                    handleTeeColorSubmit={handleTeeColorSubmit}/>
                 </Card>
             )}
         </div>
     );
+};
 
+GolfDetailsPage.propTypes = {
+    dialogState: PropTypes.object.isRequired,
+    setDialogState: PropTypes.func.isRequired,
+    handleEditChange: PropTypes.func.isRequired,
+    handleEditSubmit: PropTypes.func.isRequired,
+    handleCourseEditChange: PropTypes.func.isRequired,
+    handleCourseEditSubmit: PropTypes.func.isRequired,
+    handleTeeColorChange: PropTypes.func.isRequired,
+    handleTeeColorSubmit: PropTypes.func.isRequired
 };
 
 export default GolfDetailsPage;

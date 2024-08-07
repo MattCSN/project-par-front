@@ -1,0 +1,63 @@
+:root {
+    --primary-color: #004D40;
+    --secondary-color: #00796B;
+    --accent-color: #FFC107;
+    --background-color: #00251A;
+    --text-color: #FFFFFF;
+    --font-family: 'Arial', sans-serif;
+    --button-bg-color: var(--primary-color);
+    --button-text-color: var(--text-color);
+    --button-border-radius: 25px;
+    --button-padding: 10px 20px;
+    --button-font-size: 1rem;
+    --button-hover-bg-color: var(--secondary-color);
+    --button-hover-text-color: var(--text-color);
+    --button-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --button-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+/* Button Styles */
+button, .p-button {
+    font-family: inherit;
+    font-size: var(--button-font-size);
+    padding: var(--button-padding);
+    border: none;
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    cursor: pointer;
+    box-shadow: var(--button-shadow);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+button:hover, .p-button:hover {
+    background-color: var(--accent-color) !important;
+    color: var(#004D40) !important;
+    box-shadow: var(--button-hover-shadow);
+}
+
+button:disabled, .p-button:disabled {
+    background-color: #d6d6d6;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+}

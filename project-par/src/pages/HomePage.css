@@ -85,6 +85,10 @@
     color: #333;
 }
 
+.pagination span.p-button-icon, .pagination span.p-button-label {
+    color: #ffffff;
+}
+
 /* Spinner */
 .spinner-container {
     display: flex;
