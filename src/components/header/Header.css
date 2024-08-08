@@ -1,0 +1,59 @@
+/* Corrected font-face import */
+@font-face {
+    font-family: 'Inter';
+    src: url('../../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype'),
+    url('../../assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+.header-container {
+    width: 100%;
+    height: 310px;
+    background: linear-gradient(51.94deg, #003D39 12%, #10514C 39%, #033E3A 69%, #003D39 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    margin-top: 72px;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.header-info button {
+    border-radius: 99px;
+    background: linear-gradient(180deg, #FFD794 0%, #FFCA70 100%);
+
+    box-shadow: 0 3px 8px 0 #0412130A;
+}
+
+h1.header-title {
+    /* styleName: Bold / Sub Title; */
+    font-family: Inter, serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.header-logos img {
+    height: 20px;
+}
