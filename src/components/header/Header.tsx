@@ -10,8 +10,8 @@ function Header() {
             <div className="header-content">
                 <div className="header-info">
                     <div className="header-logos">
-                        <img src={LogoType} alt="Logo Type"/>
-                        <img src={LogoAPI} alt="Logo Type"/>
+                        <img src={LogoType} alt="JOKA"/>
+                        <img src={LogoAPI} alt="API"/>
                     </div>
                     <button>Télécharger Joka</button>
                 </div>
