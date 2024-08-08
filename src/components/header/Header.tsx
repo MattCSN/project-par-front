@@ -8,7 +8,7 @@ function Header() {
     const getApp = () => {
         window.open(
             'https://joka-app.com/',
-            '_blank' // <- This is what makes it open in a new window.
+            '_blank'
         );
     };
 
