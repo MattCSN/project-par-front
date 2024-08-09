@@ -3,6 +3,7 @@ import "./Header.css"
 import LogoType from "../../assets/svg/logos/logo-type.svg";
 import LogoAPI from "../../assets/svg/logos/logo-api.svg";
 import SearchBar from "../SearchBar/SearchBar.tsx";
+import ActionButton from "../Buttons/ActionButton/ActionButton.tsx";
 
 function Header() {
     const getApp = () => {
@@ -20,7 +21,7 @@ function Header() {
                         <img src={LogoType} alt="JOKA"/>
                         <img src={LogoAPI} alt="API"/>
                     </div>
-                    <button onClick={getApp}>Télécharger Joka</button>
+                    <ActionButton onClick={getApp} text="Télécharger Joka"/>
                 </div>
                 <div className="header-search-zone">
                     <h1 className="header-title">Parcours de golfs en France</h1>

@@ -1,4 +1,4 @@
-.caret-button {
+.link-button {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -18,8 +18,4 @@
 
 .caret-button:hover {
     color: #004540;
-}
-
-.caret-button:hover .caret {
-    fill: #004540; /* TODO : Change caret color on hover */
 }

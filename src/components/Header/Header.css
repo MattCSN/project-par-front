@@ -30,13 +30,6 @@
     gap: 4px;
 }
 
-.header-info button {
-    height: 40px;
-    border-radius: 99px;
-    background: linear-gradient(180deg, #FFD794 0%, #FFCA70 100%);
-    box-shadow: 0 3px 8px 0 #0412130A;
-}
-
 .header-search-zone {
     width: 100%;
     display: flex;

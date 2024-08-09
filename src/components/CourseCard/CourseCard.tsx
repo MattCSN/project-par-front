@@ -1,6 +1,6 @@
 import "./CourseCard.css";
 import Tag from "../Tag/Tag.tsx";
-import CaretButton from "../CaretButton/CaretButton.tsx";
+import CaretButton from "../Buttons/LinkButton/LinkButton.tsx";
 
 function CourseCard() {
     return (

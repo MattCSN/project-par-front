@@ -1,13 +1,13 @@
 import './Paginator.css';
-import ColoredButton from "../ColoredButton/ColoredButton.tsx";
+import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton.tsx";
 
 function Paginator() {
     return (
         <div className="paginator-container">
             <div className="paginator-content">
-                <ColoredButton text={"Page précédente"}/>
+                <PrimaryButton text={"Page précédente"}/>
                 <p className="paginator-current">page 2</p>
-                <ColoredButton text={"Page suivante"}/>
+                <PrimaryButton text={"Page suivante"}/>
             </div>
         </div>
     );
