@@ -10,6 +10,14 @@ function CourseCardGrid() {
                 <CourseCard/>
                 <CourseCard/>
                 <CourseCard/>
+                <CourseCard/>
+                <CourseCard/>
+                <CourseCard/>
+                <CourseCard/>
+                <CourseCard/>
+                <CourseCard/>
+                <CourseCard/>
+                <CourseCard/>
             </div>
         </div>
     );
