@@ -1,12 +1,7 @@
-@font-face {
-    font-family: 'Inter';
-    src: url('../../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype'),
-    url('../../assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
 .header-container {
+    padding-top: 24px;
+    padding-bottom: 80px;
     width: 100%;
-    min-height: 310px;
     background: linear-gradient(51.94deg, #003D39 12%, #10514C 39%, #033E3A 69%, #003D39 100%);
     display: flex;
     justify-content: center;
@@ -14,13 +9,13 @@
 }
 
 .header-content {
-    margin-top: 72px;
     width: 100%;
     max-width: 1000px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
 }
 
 .header-info {
@@ -36,9 +31,19 @@
 }
 
 .header-info button {
+    height: 40px;
     border-radius: 99px;
     background: linear-gradient(180deg, #FFD794 0%, #FFCA70 100%);
     box-shadow: 0 3px 8px 0 #0412130A;
+}
+
+.header-search-zone {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .header-title {
@@ -48,6 +53,8 @@
     line-height: 40px;
     text-align: center;
     color: #fff;
+
+    margin: 0;
 }
 
 .header-logos img {

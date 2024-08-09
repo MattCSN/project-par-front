@@ -22,8 +22,10 @@ function Header() {
                     </div>
                     <button onClick={getApp}>Télécharger Joka</button>
                 </div>
-                <h1 className="header-title">Parcours de golfs en France</h1>
-                <SearchBar/>
+                <div className="header-search-zone">
+                    <h1 className="header-title">Parcours de golfs en France</h1>
+                    <SearchBar/>
+                </div>
             </div>
         </div>
     );
