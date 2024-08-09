@@ -9,7 +9,7 @@ interface NoNameButtonProps {
 
 const CaretButton: React.FC<NoNameButtonProps> = ({text}) => {
     return (
-        <button className={`caret-button`}>
+        <button className="caret-button">
             {text}
             <img src={Caret} alt="Caret" className="caret"/>
         </button>
