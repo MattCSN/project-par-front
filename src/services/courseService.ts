@@ -1,4 +1,5 @@
 import axiosInstance from './axiosInstance';
+import {isAxiosError} from 'axios';
 
 export type CourseDetailsDTO = {
     id: string;
@@ -19,6 +20,9 @@ export const getCourseDetails = async (page: number = 1, pageSize: number = 12) 
         });
         return response.data;
     } catch (error) {
+        if (isAxiosError(error) && error.response?.status === 404) {
+            throw new Error('Course details not found (404)');
+        }
         throw new Error('Error fetching course details');
     }
 };
@@ -30,7 +34,9 @@ export const searchCourseDetails = async (searchTerm: string, page: number = 1, 
         });
         return response.data;
     } catch (error) {
+        if (isAxiosError(error) && error.response?.status === 404) {
+            throw new Error('Search results not found (404)');
+        }
         throw new Error('Error searching course details');
     }
-}
-
+};

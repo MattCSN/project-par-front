@@ -17,3 +17,7 @@
 .course-card-grid.more-than-three {
     justify-content: flex-start;
 }
+
+.empty {
+    margin-top: 0;
+}

@@ -21,9 +21,14 @@ const HomePage = () => {
         });
 
     const handleSearch = async (query: string) => {
+        if (!searchQuery) setCurrentPage(1);
         setSearchQuery(query);
-        const data = await searchCourseDetails(query, currentPage, 12);
-        setSearchResults(data);
+        try {
+            const data = await searchCourseDetails(query, currentPage, 12);
+            setSearchResults(data);
+        } catch (err) {
+            setSearchResults([]);
+        }
     };
 
     const handleNextPage = () => setCurrentPage((prevPage: number) => prevPage + 1);
@@ -38,7 +43,8 @@ const HomePage = () => {
             <div className="home-page-content">
                 <CourseCardGrid courses={searchQuery ? searchResults : coursesDTO}/>
             </div>
-            <Paginator currentPage={currentPage} onNextPage={handleNextPage} onPreviousPage={handlePreviousPage}/>
+            {searchResults.length > 0 &&
+                <Paginator currentPage={currentPage} onNextPage={handleNextPage} onPreviousPage={handlePreviousPage}/>}
         </div>
     );
 };
