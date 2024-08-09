@@ -1,0 +1,25 @@
+.caret-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: Inter, serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+    color: #296662;
+
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.caret-button:hover {
+    color: #004540;
+}
+
+.caret-button:hover .caret {
+    fill: #004540; /* TODO : Change caret color on hover */
+}

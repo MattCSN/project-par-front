@@ -1,12 +1,16 @@
 import './App.css'
-import Header from "./components/header/Header.tsx";
+import HomePage from './pages/HomePage/HomePage.tsx';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 function App() {
 
     return (
-        <div className="global-container">
-            <Header/>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+            </Routes>
+        </Router>
     )
 }
 

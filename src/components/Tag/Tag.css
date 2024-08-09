@@ -1,0 +1,19 @@
+.tag {
+    padding: 0 4px;
+    gap: 4px;
+    border-radius: 4px;
+    font-family: Inter, serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+    background: #EDF2F7;
+    color: #64748B;
+}
+
+.tag.positive {
+    background: #E6F4F3;
+    color: #004540;
+}

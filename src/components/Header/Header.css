@@ -1,4 +1,3 @@
-/* Corrected font-face import */
 @font-face {
     font-family: 'Inter';
     src: url('../../assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype'),
@@ -7,7 +6,7 @@
 
 .header-container {
     width: 100%;
-    height: 310px;
+    min-height: 310px;
     background: linear-gradient(51.94deg, #003D39 12%, #10514C 39%, #033E3A 69%, #003D39 100%);
     display: flex;
     justify-content: center;
@@ -32,7 +31,6 @@
 
 .header-logos {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 4px;
 }
@@ -40,12 +38,10 @@
 .header-info button {
     border-radius: 99px;
     background: linear-gradient(180deg, #FFD794 0%, #FFCA70 100%);
-
     box-shadow: 0 3px 8px 0 #0412130A;
 }
 
-h1.header-title {
-    /* styleName: Bold / Sub Title; */
+.header-title {
     font-family: Inter, serif;
     font-size: 32px;
     font-weight: 700;

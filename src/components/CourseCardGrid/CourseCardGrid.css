@@ -1,0 +1,12 @@
+.course-card-grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+.course-card-grid {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+}

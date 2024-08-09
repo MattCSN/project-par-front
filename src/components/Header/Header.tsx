@@ -2,7 +2,7 @@ import "./Header.css"
 
 import LogoType from "../../assets/svg/logos/logo-type.svg";
 import LogoAPI from "../../assets/svg/logos/logo-api.svg";
-import SearchBar from "../ searchBar/SearchBar.tsx";
+import SearchBar from "../SearchBar/SearchBar.tsx";
 
 function Header() {
     const getApp = () => {
