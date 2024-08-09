@@ -5,11 +5,12 @@ import "./PrimaryButton.css";
 interface PrimaryButtonProps {
     text: string;
     onClick: () => void;
+    disabled?: boolean;
 }
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({text, onClick}) => {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({text, onClick, disabled = false}) => {
     return (
-        <Button text={text} className="primary-button" onClick={onClick}/>
+        <Button text={text} className="primary-button" onClick={onClick} disabled={disabled}/>
     );
 }
 

@@ -3,3 +3,8 @@
     box-shadow: 0 3px 8px 0 #0412130A;
     color: #ffffff;
 }
+
+.primary-button[disabled] {
+    opacity: 50%;
+    cursor: not-allowed;
+}

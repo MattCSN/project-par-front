@@ -2,22 +2,24 @@ import React, {useState} from 'react';
 import './SearchBar.css';
 import SearchIcon from "../../assets/svg/icons/search-icon.svg";
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+    onSearch: (searchQuery: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({onSearch}) => {
     const [searchQuery, setSearchQuery] = useState('');
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchQuery(event.target.value);
+        const query = event.target.value;
+        setSearchQuery(query);
+        onSearch(query);
     };
-
-    console.log('Searching for:', searchQuery);
 
     return (
         <div className="search-bar">
             <img src={SearchIcon} alt="Search Icon" className="search-icon"/>
             <input
                 type="text"
-                name="search-bar"
-                id="search-bar"
                 className="search-input"
                 value={searchQuery}
                 onChange={handleSearchChange}

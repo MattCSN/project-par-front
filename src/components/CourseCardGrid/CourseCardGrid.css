@@ -5,9 +5,15 @@
 
 .course-card-grid {
     max-width: 1000px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     padding: 40px;
     margin-top: -80px;
+    justify-content: center;
+}
+
+.course-card-grid.more-than-three {
+    justify-content: flex-start;
 }

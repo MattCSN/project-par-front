@@ -22,3 +22,15 @@ export const getCourseDetails = async (page: number = 1, pageSize: number = 12) 
         throw new Error('Error fetching course details');
     }
 };
+
+export const searchCourseDetails = async (searchTerm: string, page: number = 1, pageSize: number = 12) => {
+    try {
+        const response = await axiosInstance.get('/v1/courses/details/search', {
+            params: {searchTerm, page, pageSize},
+        });
+        return response.data;
+    } catch (error) {
+        throw new Error('Error searching course details');
+    }
+}
+

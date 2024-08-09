@@ -2,7 +2,7 @@
 import "./CourseCard.css";
 import Tag from "../Tag/Tag";
 import CaretButton from "../Buttons/LinkButton/LinkButton";
-import { CourseDetailsDTO } from '../../services/courseService';
+import {CourseDetailsDTO} from '../../services/courseService';
 
 interface CourseCardProps {
     course: CourseDetailsDTO;
@@ -16,9 +16,9 @@ function CourseCard({course}: CourseCardProps) {
                 <h3>{course.name}</h3>
 
                 <div className="course-card-tags">
-                    <Tag text={course.numHoles.toString()} type="positive"/>
-                    <Tag text={course.pitchAndPutt ? "Yes" : "No"} type="positive"/>
-                    <Tag text={course.compact ? "Yes" : "No"} type="positive"/>
+                    <Tag text={`${course.numHoles} trous`} type="positive"/>
+                    {course.pitchAndPutt ? <Tag text="Pitch and Putt" type="positive"/> : null}
+                    {course.compact ? <Tag text="Compact" type="positive"/> : null}
                 </div>
 
                 <p>{course.postalCode} {course.city}</p>
