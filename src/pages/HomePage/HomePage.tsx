@@ -37,14 +37,18 @@ const HomePage = () => {
     if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error: {(error as any).message}</div>;
 
+    console.log(searchResults.length);
+
     return (
         <div className="global-container">
             <Header onSearch={handleSearch}/>
             <div className="home-page-content">
                 <CourseCardGrid courses={searchQuery ? searchResults : coursesDTO}/>
             </div>
-            {searchResults.length > 0 &&
-                <Paginator currentPage={currentPage} onNextPage={handleNextPage} onPreviousPage={handlePreviousPage}/>}
+            {(searchQuery ? searchResults.length >= 12 : coursesDTO.length >= 12) &&
+                <Paginator currentPage={currentPage} itemsCount={searchQuery ? searchResults.length : coursesDTO.length}
+                           onNextPage={handleNextPage}
+                           onPreviousPage={handlePreviousPage}/>}
         </div>
     );
 };
