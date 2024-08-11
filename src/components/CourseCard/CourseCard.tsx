@@ -1,8 +1,9 @@
-// src/components/CourseCard/CourseCard.tsx
-import "./CourseCard.css";
 import Tag from "../Tag/Tag";
 import CaretButton from "../Buttons/LinkButton/LinkButton";
+
 import {CourseDetailsDTO} from '../../services/courseService';
+
+import "./CourseCard.css";
 
 interface CourseCardProps {
     course: CourseDetailsDTO;

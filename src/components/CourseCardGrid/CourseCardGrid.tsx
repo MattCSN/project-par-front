@@ -1,8 +1,11 @@
-import "./CourseCardGrid.css"
 import CourseCard from "../CourseCard/CourseCard";
-import {CourseDetailsDTO} from '../../services/courseService';
-import classNames from 'classnames';
 import DisplayMessage from "../DisplayMesage/DisplayMessage.tsx";
+
+import {CourseDetailsDTO} from '../../services/courseService';
+
+import classNames from 'classnames';
+
+import "./CourseCardGrid.css"
 
 interface CourseCardGridProps {
     courses: CourseDetailsDTO[];

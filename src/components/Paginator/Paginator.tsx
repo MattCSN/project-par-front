@@ -1,4 +1,5 @@
 import './Paginator.css';
+
 import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton.tsx";
 
 interface PaginatorProps {

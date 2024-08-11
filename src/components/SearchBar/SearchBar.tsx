@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import './SearchBar.css';
+
 import SearchIcon from "../../assets/svg/icons/search-icon.svg";
+
+import './SearchBar.css';
 
 interface SearchBarProps {
     onSearch: (searchQuery: string) => void;

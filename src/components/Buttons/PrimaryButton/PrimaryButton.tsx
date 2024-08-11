@@ -1,5 +1,7 @@
 import React from "react";
+
 import Button from "../Button/Button.tsx";
+
 import "./PrimaryButton.css";
 
 interface PrimaryButtonProps {

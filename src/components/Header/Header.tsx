@@ -1,9 +1,12 @@
-import "./Header.css"
+import React from "react";
+
+import ActionButton from "../Buttons/ActionButton/ActionButton.tsx";
+import SearchBar from "../SearchBar/SearchBar.tsx";
+
 import LogoType from "../../assets/svg/logos/logo-type.svg";
 import LogoAPI from "../../assets/svg/logos/logo-api.svg";
-import ActionButton from "../Buttons/ActionButton/ActionButton.tsx";
-import React from "react";
-import SearchBar from "../SearchBar/SearchBar.tsx";
+
+import "./Header.css";
 
 const getApp = () => {
     window.open(
