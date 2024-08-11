@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import {useQuery} from 'react-query';
 import {getCourseDetails, searchCourseDetails} from '../../services/courseService';
-import Header from '../../components/Header/Header.tsx';
 import CourseCardGrid from '../../components/CourseCardGrid/CourseCardGrid.tsx';
 import Paginator from '../../components/Paginator/Paginator.tsx';
+import Header from '../../components/Header/Header.tsx';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -17,26 +17,25 @@ const HomePage = () => {
         {enabled: !searchQuery}
     );
 
-    const handleSearch = async (query: string) => {
-        setCurrentPage(1);
-        setSearchQuery(query);
+    const fetchCourseDetails = async (query: string, page: number) => {
         try {
-            const data = await searchCourseDetails(query, 1, 12);
+            const data = await searchCourseDetails(query, page, 12);
             setSearchResults(data);
         } catch {
             setSearchResults([]);
         }
     };
 
+    const handleSearch = async (query: string) => {
+        setCurrentPage(1);
+        setSearchQuery(query);
+        await fetchCourseDetails(query, 1);
+    };
+
     const handlePageChange = async (newPage: number) => {
         setCurrentPage(newPage);
         if (searchQuery) {
-            try {
-                const data = await searchCourseDetails(searchQuery, newPage, 12);
-                setSearchResults(data);
-            } catch {
-                setSearchResults([]);
-            }
+            await fetchCourseDetails(searchQuery, newPage);
         }
     };
 
