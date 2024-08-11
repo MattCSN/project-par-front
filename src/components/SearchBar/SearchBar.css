@@ -38,4 +38,5 @@
 
 .search-bar:focus-within .search-input {
     border: 2px solid #004540;
+    padding: 16px 15px 16px 47px;
 }
