@@ -42,9 +42,9 @@ const HomePage = () => {
     if (isLoading) return <div>Loading...</div>;
     if (error) return <div>Error: {(error as Error).message}</div>;
 
-    const showPaginator = searchQuery && currentPage === 1
-        ? searchResults.length >= 12
-        : coursesDTO.length >= 12;
+    const showPaginator = searchQuery
+        ? currentPage == 1 ? searchResults.length == 12 : searchResults
+        : currentPage == 1 ? coursesDTO.length == 12 : coursesDTO
 
     return (
         <div className="global-container">
