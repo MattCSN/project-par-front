@@ -7,37 +7,45 @@ import Paginator from '../../components/Paginator/Paginator.tsx';
 import './HomePage.css';
 
 const HomePage = () => {
-    const [currentPage, setCurrentPage] = useState<number>(1);
-    const [searchResults, setSearchResults] = useState<any[]>([]);
-    const [searchQuery, setSearchQuery] = useState<string>('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const [searchResults, setSearchResults] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
-    const {
-        data: coursesDTO,
-        error,
-        isLoading
-    } = useQuery(['courseDetails', currentPage], () => getCourseDetails(currentPage, 12),
-        {
-            enabled: !searchQuery // Disable this query if searchQuery is present
-        });
+    const {data: coursesDTO, error, isLoading} = useQuery(
+        ['courseDetails', currentPage],
+        () => getCourseDetails(currentPage, 12),
+        {enabled: !searchQuery}
+    );
 
     const handleSearch = async (query: string) => {
-        if (!searchQuery) setCurrentPage(1);
+        setCurrentPage(1);
         setSearchQuery(query);
         try {
-            const data = await searchCourseDetails(query, currentPage, 12);
+            const data = await searchCourseDetails(query, 1, 12);
             setSearchResults(data);
-        } catch (err) {
+        } catch {
             setSearchResults([]);
         }
     };
 
-    const handleNextPage = () => setCurrentPage((prevPage: number) => prevPage + 1);
-    const handlePreviousPage = () => setCurrentPage((prevPage: number) => Math.max(prevPage - 1, 1));
+    const handlePageChange = async (newPage: number) => {
+        setCurrentPage(newPage);
+        if (searchQuery) {
+            try {
+                const data = await searchCourseDetails(searchQuery, newPage, 12);
+                setSearchResults(data);
+            } catch {
+                setSearchResults([]);
+            }
+        }
+    };
 
     if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error: {(error as any).message}</div>;
+    if (error) return <div>Error: {(error as Error).message}</div>;
 
-    console.log(searchResults.length);
+    const showPaginator = searchQuery && currentPage === 1
+        ? searchResults.length >= 12
+        : coursesDTO.length >= 12;
 
     return (
         <div className="global-container">
@@ -45,10 +53,14 @@ const HomePage = () => {
             <div className="home-page-content">
                 <CourseCardGrid courses={searchQuery ? searchResults : coursesDTO}/>
             </div>
-            {(searchQuery ? searchResults.length >= 12 : coursesDTO.length >= 12) &&
-                <Paginator currentPage={currentPage} itemsCount={searchQuery ? searchResults.length : coursesDTO.length}
-                           onNextPage={handleNextPage}
-                           onPreviousPage={handlePreviousPage}/>}
+            {showPaginator && (
+                <Paginator
+                    currentPage={currentPage}
+                    itemsCount={searchQuery ? searchResults.length : coursesDTO.length}
+                    onNextPage={() => handlePageChange(currentPage + 1)}
+                    onPreviousPage={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                />
+            )}
         </div>
     );
 };
