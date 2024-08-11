@@ -8,3 +8,11 @@
     opacity: 50%;
     cursor: not-allowed;
 }
+
+.primary-button:hover {
+    background: #004540;
+}
+
+.primary-button:active {
+    background: #003733;
+}

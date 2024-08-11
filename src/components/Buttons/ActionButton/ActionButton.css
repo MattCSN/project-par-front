@@ -2,4 +2,18 @@
     color: #041213;
     background: linear-gradient(180deg, #FFD794 0%, #FFCA70 100%);
     box-shadow: 0 3px 8px 0 #0412130A;
+    border: 1px solid #FFD794
+}
+
+.action-button[disabled] {
+    opacity: 50%;
+    cursor: not-allowed;
+}
+
+.action-button:hover {
+    background: linear-gradient(180deg, #FFD794 0%, #FFF8C9 100%);
+}
+
+.action-button:active {
+    background: #FFD794;
 }
