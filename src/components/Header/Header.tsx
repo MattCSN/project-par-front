@@ -16,15 +16,20 @@ interface HeaderProps {
     onSearch?: (query: string) => void
 }
 
-const Header: React.FC<HeaderProps> = ({onSearch = () => {}}) => {
+const Header: React.FC<HeaderProps> = ({
+                                           onSearch = () => {
+                                           }
+                                       }) => {
     return (
         <div className="header-container">
             <div className="header-content">
                 <div className="header-info">
-                    <div className="header-logos">
-                        <img src={LogoType} alt="JOKA"/>
-                        <img src={LogoAPI} alt="API"/>
-                    </div>
+                    <a href="/">
+                        <div className="header-logos">
+                            <img src={LogoType} alt="JOKA"/>
+                            <img src={LogoAPI} alt="API"/>
+                        </div>
+                    </a>
                     <ActionButton onClick={getApp} text="Télécharger Joka"/>
                 </div>
                 <div className="header-search-zone">
