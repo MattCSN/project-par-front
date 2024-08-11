@@ -26,7 +26,7 @@ function CourseCard({course}: CourseCardProps) {
             </div>
 
             <div className="course-card-footer">
-                <CaretButton text={"Voir les détails"}/>
+                <CaretButton text={"Voir les détails"} href={"https://joka-app.com/"}/>
             </div>
         </div>
     );
