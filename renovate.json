@@ -1,0 +1,66 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices"],
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "rebaseWhen": "behind-base-branch",
+  "ignoreTests": false,
+  "ignoreUnstable": true,
+  "respectLatest": true,
+  "enabled": true,
+  "prHourlyLimit": 10,
+  "prCreation": "immediate",
+  "branchConcurrentLimit": 5,
+  "branchPrefix": "dependencies/",
+  "labels": ["Dependencies :package:"],
+  "assignees": ["Rangoow", "MattCSN"],
+  "reviewers": ["Rangoow", "MattCSN"],
+  "minimumReleaseAge": "10 days",
+  "enabledManagers": ["npm", "github-actions", "nvm"],
+  "npm": {
+    "enabled": true,
+    "fileMatch": ["package.json"]
+  },
+  "major": {
+    "branchPrefix": "dependencies/major/",
+    "automerge": false,
+    "enabled": true,
+    "rebaseWhen": "behind-base-branch"
+  },
+  "minor": {
+    "branchPrefix": "dependencies/minor/",
+    "automerge": false,
+    "enabled": true,
+    "rebaseWhen": "behind-base-branch"
+  },
+  "patch": {
+    "branchPrefix": "dependencies/patch/",
+    "automerge": true,
+    "enabled": true,
+    "rebaseWhen": "behind-base-branch"
+  },
+  "pin": {
+    "branchPrefix": "dependencies/pin/",
+    "automerge": true,
+    "enabled": true,
+    "rebaseWhen": "behind-base-branch"
+  },
+  "lockFileMaintenance": {
+    "branchPrefix": "dependencies/lock-file/",
+    "enabled": true,
+    "automerge": true,
+    "rebaseWhen": "behind-base-branch"
+  },
+  "vulnerabilityAlerts": {
+    "automerge": false,
+    "enabled": true,
+    "rebaseWhen": "behind-base-branch"
+  },
+  "automergeType": "pr",
+  "packageRules": [
+    {
+      "matchDepTypes": ["dependencies", "peerDependencies", "devDependencies"],
+      "rangeStrategy": "pin"
+    }
+  ]
+}
