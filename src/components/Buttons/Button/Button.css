@@ -2,15 +2,10 @@
     height: 40px;
     padding: 8px 16px;
     border-radius: 99px;
-    font-family: Inter, serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
+    font: 600 16px/24px 'Inter', serif;
     letter-spacing: 0.01em;
     text-align: center;
     font-variation-settings: 'slnt' 0;
-
     border: none;
-
     cursor: pointer;
 }

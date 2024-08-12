@@ -1,6 +1,5 @@
 .header-container {
-    padding-top: 24px;
-    padding-bottom: 80px;
+    padding: 24px 0 80px;
     width: 100%;
     background: linear-gradient(51.94deg, #003D39 12%, #10514C 39%, #033E3A 69%, #003D39 100%);
     display: flex;
@@ -40,13 +39,9 @@
 }
 
 .header-title {
-    font-family: Inter, serif;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 40px;
+    font: 700 32px/40px 'Inter', serif;
     text-align: center;
     color: #fff;
-
     margin: 0;
 }
 

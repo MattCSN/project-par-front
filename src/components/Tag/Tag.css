@@ -2,13 +2,9 @@
     padding: 0 4px;
     gap: 4px;
     border-radius: 4px;
-    font-family: Inter, serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
+    font: 600 14px/20px 'Inter', serif;
     letter-spacing: 0.01em;
     text-align: left;
-
     background: #EDF2F7;
     color: #64748B;
 }
