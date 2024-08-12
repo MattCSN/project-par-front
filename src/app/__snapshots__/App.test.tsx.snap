@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > should render correctly and match the snapshot 1`] = `
+<body>
+  <div>
+    <div>
+      <a
+        href="https://vitejs.dev"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="Vite logo"
+          class="logo"
+          src="/src/assets/vite.svg"
+        />
+      </a>
+      <a
+        href="https://react.dev"
+        rel="noreferrer"
+        target="_blank"
+      >
+        <img
+          alt="React logo"
+          class="logo react"
+          src="/src/assets/react.svg"
+        />
+      </a>
+    </div>
+    <h1>
+      Vite + React
+    </h1>
+    <h1>
+      PROJECT PAR
+    </h1>
+    <div
+      class="card"
+    >
+      <button>
+        count is 
+        0
+      </button>
+      <p>
+        Edit 
+        <code>
+          src/App.tsx
+        </code>
+         and save to test HMR
+      </p>
+    </div>
+    <p
+      class="read-the-docs"
+    >
+      Click on the Vite and React logos to learn more
+    </p>
+  </div>
+</body>
+`;

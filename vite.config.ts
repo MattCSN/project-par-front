@@ -2,7 +2,6 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   root: __dirname,
   cacheDir: "./node_modules/.vite/Handball-Manager",
@@ -15,6 +14,7 @@ export default defineConfig({
     port: 4300,
     host: "localhost",
   },
+
   plugins: [
     react(),
     VitePWA({
