@@ -2,6 +2,7 @@
   "name": "project-par-front",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -13,6 +14,11 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "axios": "^1.7.3",
+    "classname": "^0.0.0",
+    "classnames": "^2.5.1",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.26.0"
     "@tanstack/react-query": "5.51.23",
     "i18next": "23.12.2",
     "i18next-browser-languagedetector": "8.0.0",
@@ -21,6 +27,9 @@
     "react-i18next": "15.0.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@types/classnames": "^2.3.0",
+    "vite-plugin-svgr": "^4.2.0"
     "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "19.2.2",
     "@tanstack/eslint-plugin-query": "5.51.15",
