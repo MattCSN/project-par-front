@@ -1,0 +1,26 @@
+@import '../../../styles/variables.css';
+@import '../../../styles/common.css';
+
+.link-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font: var(--font-weight-bold) var(--font-size-small)/var(--line-height-small) var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    text-align: left;
+    color: var(--color-tertiary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+.link-button:active {
+    color: var(--color-primary);
+}
+
+.link-button:active svg path {
+    fill: var(--color-primary);
+}

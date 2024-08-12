@@ -1,0 +1,18 @@
+@import '../../styles/variables.css';
+@import '../../styles/common.css';
+
+.tag {
+    padding: 0 4px;
+    gap: 4px;
+    border-radius: var(--border-radius-small);
+    font: var(--font-weight-bold) var(--font-size-small)/var(--line-height-small) var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    text-align: left;
+    background: #EDF2F7;
+    color: var(--color-text-secondary);
+}
+
+.tag.positive {
+    background: #E6F4F3;
+    color: var(--color-primary);
+}
