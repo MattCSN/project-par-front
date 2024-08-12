@@ -1,0 +1,15 @@
+@import '../../../styles/variables.css';
+@import '../../../styles/common.css';
+
+.button {
+    height: 40px;
+    padding: 8px 16px;
+    border-radius: var(--border-radius-large);
+    font: var(--font-weight-bold) var(--font-size-medium)/var(--line-height-medium) var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    text-align: center;
+    font-variation-settings: 'slnt' 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
