@@ -7,7 +7,7 @@ export default defineConfig({
     include: ["src/**/*.test.{ts,tsx}"],
     exclude: ["vitest-setup.js"],
     setupFiles: [`vitest-setup.js`],
-    reporters: ["default", "html", "json"],
+    reporters: ["default"],
     coverage: {
       reportsDirectory: "./coverage",
       reporter: ["lcov"],

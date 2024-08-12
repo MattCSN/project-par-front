@@ -1,0 +1,27 @@
+name: Pull Request Workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  joka_integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Lint project-par-front
+        run: npm run lint
+
+      - name: Test project-par-front
+        run: npm run test:coverage
+
+      - name: Build project-par-front
+        run: npm run build
