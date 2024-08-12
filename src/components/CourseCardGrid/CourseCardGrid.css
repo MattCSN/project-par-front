@@ -1,3 +1,6 @@
+@import '../../styles/variables.css';
+@import '../../styles/common.css';
+
 .course-card-grid-container {
     display: flex;
     justify-content: center;

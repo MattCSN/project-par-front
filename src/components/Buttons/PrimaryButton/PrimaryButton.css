@@ -1,18 +1,21 @@
+@import '../../../styles/variables.css';
+@import '../../../styles/common.css';
+
 .primary-button {
-    background: linear-gradient(180deg, #004540 0%, #003733 100%);
-    box-shadow: 0 3px 8px 0 #0412130A;
-    color: #FFF;
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    box-shadow: var(--box-shadow);
+    color: var(--color-background);
 }
 
 .primary-button[disabled] {
-    opacity: 50%;
+    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
 .primary-button:hover {
-    background: #004540;
+    background: var(--color-primary);
 }
 
 .primary-button:active {
-    background: #003733;
+    background: var(--color-secondary);
 }

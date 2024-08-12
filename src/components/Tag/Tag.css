@@ -1,15 +1,18 @@
+@import '../../styles/variables.css';
+@import '../../styles/common.css';
+
 .tag {
     padding: 0 4px;
     gap: 4px;
-    border-radius: 4px;
-    font: 600 14px/20px 'Inter', serif;
-    letter-spacing: 0.01em;
+    border-radius: var(--border-radius-small);
+    font: var(--font-weight-bold) var(--font-size-small)/var(--line-height-small) var(--font-family);
+    letter-spacing: var(--letter-spacing);
     text-align: left;
     background: #EDF2F7;
-    color: #64748B;
+    color: var(--color-text-secondary);
 }
 
 .tag.positive {
     background: #E6F4F3;
-    color: #004540;
+    color: var(--color-primary);
 }

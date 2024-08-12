@@ -1,13 +1,13 @@
-/* src/index.css */
+@import './styles/variables.css';
+@import './styles/common.css';
 
-/* Reset some default browser styles */
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: Inter, serif;
+    font-family: var(--font-family), serif;
     background: #EDF2F7;
-    color: #041213;
+    color: var(--color-text-primary);
 }

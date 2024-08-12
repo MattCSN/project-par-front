@@ -1,3 +1,6 @@
+@import '../../styles/variables.css';
+@import '../../styles/common.css';
+
 .display-message-container {
     max-width: 1000px;
     width: 100%;
@@ -9,14 +12,14 @@
 }
 
 .display-message-container h4 {
-    font: 700 18px/24px 'Inter', serif;
+    font: var(--font-weight-extra-bold) var(--font-size-large)/var(--line-height-medium) var(--font-family);
     text-align: center;
-    color: #041213;
+    color: var(--color-text-primary);
 }
 
 .display-message-container p {
-    font: 400 16px/24px 'Inter', serif;
-    letter-spacing: 0.01em;
+    font: var(--font-weight-regular) var(--font-size-medium)/var(--line-height-medium) var(--font-family);
+    letter-spacing: var(--letter-spacing);
     text-align: center;
-    color: #64748B;
+    color: var(--color-text-secondary);
 }

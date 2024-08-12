@@ -1,3 +1,6 @@
+@import '../../styles/variables.css';
+@import '../../styles/common.css';
+
 .paginator-container {
     display: flex;
     justify-content: center;
@@ -14,10 +17,10 @@
 }
 
 .paginator-current {
-    font: 600 16px/24px 'Inter', serif;
-    letter-spacing: 0.01em;
+    font: var(--font-weight-bold) var(--font-size-medium)/var(--line-height-medium) var(--font-family);
+    letter-spacing: var(--letter-spacing);
     text-align: center;
     font-variation-settings: 'slnt' 0;
     margin: 0;
-    color: #041213;
+    color: var(--color-text-primary);
 }

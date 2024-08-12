@@ -1,11 +1,14 @@
+@import '../../../styles/variables.css';
+@import '../../../styles/common.css';
+
 .link-button {
     display: flex;
     align-items: center;
     gap: 4px;
-    font: 600 14px/20px 'Inter', serif;
-    letter-spacing: 0.01em;
+    font: var(--font-weight-bold) var(--font-size-small)/var(--line-height-small) var(--font-family);
+    letter-spacing: var(--letter-spacing);
     text-align: left;
-    color: #296662;
+    color: var(--color-tertiary);
     cursor: pointer;
     text-decoration: none;
 }
@@ -15,9 +18,9 @@
 }
 
 .link-button:active {
-    color: #004540;
+    color: var(--color-primary);
 }
 
 .link-button:active svg path {
-    fill: #004540;
+    fill: var(--color-primary);
 }
