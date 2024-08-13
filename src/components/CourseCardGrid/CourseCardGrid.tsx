@@ -9,9 +9,11 @@ import "./CourseCardGrid.css"
 
 interface CourseCardGridProps {
     courses: CourseDetailsDTO[];
+    messageTitle?: string;
+    message?: string;
 }
 
-const CourseCardGrid = ({courses}: CourseCardGridProps) => {
+const CourseCardGrid = ({courses, messageTitle, message}: CourseCardGridProps) => {
     const gridClass = classNames('course-card-grid', {
         'more-than-three': courses.length > 3,
         'empty': courses.length < 1
@@ -24,7 +26,8 @@ const CourseCardGrid = ({courses}: CourseCardGridProps) => {
         <div className="course-card-grid-container">
             <div className={gridClass}>
                 {empty && (
-                    <DisplayMessage title="Aucun parcours de golf trouvé." text="Veuillez vérifier votre recherche."/>
+                    <DisplayMessage title={messageTitle || "Aucun parcours de golf trouvé."}
+                                    text={message || "Veuillez vérifier votre recherche."}/>
                 )}
                 {courses.map((course) => (
                     <CourseCard key={course.id} course={course}/>
