@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./Tag.css";
 
 interface TagProps {
@@ -7,7 +5,7 @@ interface TagProps {
     type: string;
 }
 
-const Tag: React.FC<TagProps> = ({ text, type }) => {
+const Tag = ({text, type}: TagProps) => {
     return (
         <span className={`tag ${type}`}>
             {text}
