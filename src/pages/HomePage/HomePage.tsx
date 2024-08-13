@@ -39,8 +39,28 @@ const HomePage = () => {
         }
     };
 
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error: {(error as Error).message}</div>;
+    if (isLoading) return (
+        <div className="global-container">
+            <Header onSearch={handleSearch}/>
+            <div className="home-page-content">
+                <CourseCardGrid courses={[]}
+                                messageTitle="Greens en cours de tonte."
+                                message="Chargement en cours..."/>
+            </div>
+        </div>
+    );
+
+
+    if (error) return (
+        <div className="global-container">
+            <Header onSearch={handleSearch}/>
+            <div className="home-page-content">
+                <CourseCardGrid courses={[]}
+                                messageTitle="Fariways impraticables !"
+                                message={(error as Error).message}/>
+            </div>
+        </div>
+    );
 
     const showPaginator = searchQuery
         ? currentPage == 1 ? searchResults.length == 12 : searchResults
