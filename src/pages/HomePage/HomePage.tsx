@@ -1,9 +1,11 @@
 import {useState} from 'react';
 import {useQuery} from 'react-query';
+import {Header} from '../../components/Header/Header.tsx';
 import {getCourseDetails, searchCourseDetails} from '../../services/courseService';
+
 import CourseCardGrid from '../../components/CourseCardGrid/CourseCardGrid.tsx';
 import Paginator from '../../components/Paginator/Paginator.tsx';
-import Header from '../../components/Header/Header.tsx';
+
 import './HomePage.css';
 
 const HomePage = () => {
