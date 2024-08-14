@@ -1,5 +1,3 @@
-import React from "react";
-
 import ActionButton from "../Buttons/ActionButton/ActionButton.tsx";
 import SearchBar from "../SearchBar/SearchBar.tsx";
 
@@ -19,10 +17,10 @@ interface HeaderProps {
     onSearch?: (query: string) => void
 }
 
-const Header: React.FC<HeaderProps> = ({
-                                           onSearch = () => {
-                                           }
-                                       }) => {
+export const Header = ({
+                           onSearch = () => {
+                           }
+                       }: HeaderProps) => {
     return (
         <div className="header-container">
             <div className="header-content">
@@ -43,5 +41,3 @@ const Header: React.FC<HeaderProps> = ({
         </div>
     );
 }
-
-export default Header;
