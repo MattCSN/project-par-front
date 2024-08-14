@@ -13,9 +13,9 @@ const Paginator = ({currentPage, itemsCount, onNextPage, onPreviousPage}: Pagina
     return (
         <div className="paginator-container">
             <div className="paginator-content">
-                <PrimaryButton text={"Page précédente"} onClick={onPreviousPage} disabled={currentPage === 1}/>
+                <PrimaryButton text={"Précédente"} onClick={onPreviousPage} disabled={currentPage === 1}/>
                 <p className="paginator-current">Page {currentPage}</p>
-                <PrimaryButton text={"Page suivante"} onClick={onNextPage}
+                <PrimaryButton text={"Suivante"} onClick={onNextPage}
                                disabled={itemsCount < 11}/>
             </div>
         </div>
