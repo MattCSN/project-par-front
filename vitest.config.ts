@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
@@ -6,7 +7,7 @@ export default defineConfig({
     environment: "jsdom",
     include: ["src/**/*.test.{ts,tsx}"],
     exclude: ["vitest-setup.js"],
-    setupFiles: [`vitest-setup.js`],
+    setupFiles: ["./vitest-setup.js"],
     reporters: ["default"],
     coverage: {
       reportsDirectory: "./coverage",

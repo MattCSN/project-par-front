@@ -45,7 +45,7 @@ module.exports = {
         "check-file/filename-naming-convention": [
           "error",
           {
-            "src/**/!({index,test-utils,use,main})*.tsx": "PASCAL_CASE",
+            "src/**/!({index,use,main,custom-render})*.tsx": "PASCAL_CASE",
             "src/**/*.module.scss": "PASCAL_CASE",
           },
           { ignoreMiddleExtensions: true },

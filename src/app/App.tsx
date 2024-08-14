@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import reactLogo from "../assets/react.svg";
 import viteLogo from "../assets/vite.svg";
@@ -6,6 +7,7 @@ import viteLogo from "../assets/vite.svg";
 import "./App.css";
 
 function App() {
+  const { t } = useTranslation();
   const [count, setCount] = useState(0);
 
   return (
@@ -26,7 +28,7 @@ function App() {
             setCount(() => count + 1);
           }}
         >
-          count is {count}
+          {`${t("button.counter")} ${count.toString()}`}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR

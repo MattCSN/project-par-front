@@ -1,0 +1,6 @@
+{
+  "test": "Ceci est une phrase test",
+  "button": {
+    "counter": "le compteur est à"
+  }
+}
