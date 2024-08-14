@@ -24,3 +24,9 @@
 .empty {
     margin-top: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .course-card-grid {
+        padding: 40px 0;
+    }
+}

@@ -73,15 +73,15 @@ const HomePage = () => {
             <Header onSearch={handleSearch}/>
             <div className="home-page-content">
                 <CourseCardGrid courses={searchQuery ? searchResults : coursesDTO}/>
+                {showPaginator && (
+                    <Paginator
+                        currentPage={currentPage}
+                        itemsCount={searchQuery ? searchResults.length : coursesDTO.length}
+                        onNextPage={() => handlePageChange(currentPage + 1)}
+                        onPreviousPage={() => handlePageChange(Math.max(currentPage - 1, 1))}
+                    />
+                )}
             </div>
-            {showPaginator && (
-                <Paginator
-                    currentPage={currentPage}
-                    itemsCount={searchQuery ? searchResults.length : coursesDTO.length}
-                    onNextPage={() => handlePageChange(currentPage + 1)}
-                    onPreviousPage={() => handlePageChange(Math.max(currentPage - 1, 1))}
-                />
-            )}
         </div>
     );
 };
