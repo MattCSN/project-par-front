@@ -10,4 +10,9 @@ body {
     font-family: var(--font-family), serif;
     background: #EDF2F7;
     color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    font-synthesis: none !important;
 }
