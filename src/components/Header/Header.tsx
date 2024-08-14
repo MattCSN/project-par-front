@@ -1,8 +1,7 @@
 import ActionButton from "../Buttons/ActionButton/ActionButton.tsx";
 import SearchBar from "../SearchBar/SearchBar.tsx";
 
-import LogoType from "../../assets/svg/logos/logo-type.svg";
-import LogoAPI from "../../assets/svg/logos/logo-api.svg";
+import LogoJokaAPI from "../../assets/svg/logos/logo-Joka-API.svg";
 
 import "./Header.css";
 
@@ -27,8 +26,7 @@ export const Header = ({
                 <div className="header-info">
                     <a href="/">
                         <div className="header-logos">
-                            <img src={LogoType} alt="JOKA"/>
-                            <img src={LogoAPI} alt="API"/>
+                            <img src={LogoJokaAPI} alt="JOKA API"/>
                         </div>
                     </a>
                     <ActionButton onClick={getApp} text="Télécharger Joka"/>
