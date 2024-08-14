@@ -25,7 +25,7 @@ const SearchBar: React.FC<SearchBarProps> = ({onSearch}) => {
                 className="search-input"
                 value={searchQuery}
                 onChange={handleSearchChange}
-                placeholder="Rechercher par nom ou ville du parcours / golf..."
+                placeholder="Ville ou nom du parcours..."
             />
         </div>
     );
