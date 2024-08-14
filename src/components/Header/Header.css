@@ -52,3 +52,10 @@
 .header-logos img {
     height: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .header-container {
+        padding: 24px 16px 80px;
+        box-sizing: border-box;
+    }
+}

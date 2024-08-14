@@ -67,3 +67,9 @@
     flex-wrap: wrap;
     margin: 0 0 12px;
 }
+
+@media screen and (max-width: 768px) {
+    .course-cards-container {
+        max-width: 100%;
+    }
+}
