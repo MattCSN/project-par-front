@@ -21,7 +21,7 @@ export interface GolfProps {
     googleMapLinks: string;
     latitude: number;
     longitude: number;
-    courses: { id: string; name: string }[];
+    courses: { id: string; name: string, numberHoles: number }[];
 }
 
 export interface CourseProps {

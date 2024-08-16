@@ -1,0 +1,33 @@
+@import '../../styles/variables.css';
+@import '../../styles/common.css';
+
+.course-selector-field-container {
+    padding: 8px 24px;
+}
+
+.course-selector-field p {
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+    color: #041213;
+}
+
+.course-selector-field-container.active {
+    border-left: 4px solid var(--color-tertiary);
+    padding: 8px 21px;
+    margin-left: -1px;
+}
+
+.course-selector-field-container.active p {
+    color: var(--color-tertiary);
+
+    font-variation-settings: 'slnt' 0;
+}
+
+.course-selector-field-container:not(.active) {
+    cursor: pointer;
+}
