@@ -2,6 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {getCourseDetailsById} from '../../services/courseService.ts';
 import {ApiResponse} from '../../services/types.ts';
+import {SmallHeader} from "../../components/SmallHeader/SmallHeader.tsx";
+
+import './CourseDetails.css';
+import Tag from "../../components/Tag/Tag.tsx";
 
 const CourseDetails: React.FC = () => {
     const {courseId} = useParams<{ courseId: string }>();
@@ -42,27 +46,69 @@ const CourseDetails: React.FC = () => {
     }
 
     return (
-        <div>
-            <h2>{courseDetails.golf.name}</h2>
-            <h1>{courseDetails.course_details.name}</h1>
-            <p>Number of Holes: {courseDetails.course_details.number_of_holes}</p>
-            <p>Pitch and Putt: {courseDetails.course_details.pitch_and_putt ? 'Yes' : 'No'}</p>
-            <p>Compact: {courseDetails.course_details.compact ? 'Yes' : 'No'}</p>
-            <h2>Holes</h2>
-            {courseDetails.course_details.holes.map(hole => (
-                <div key={hole.details.id}>
-                    <h3>Hole {hole.hole_number}</h3>
-                    <p>Par: {hole.details.Par}</p>
-                    <h4>Tees</h4>
-                    {hole.tees.map((tee, index) => (
-                        <div key={index}>
-                            <p>Name: {tee.name}</p>
-                            <p>Distance: {tee.distance}</p>
-                            <p>Par: {tee.par}</p>
-                        </div>
-                    ))}
+        <div className="global-container">
+            <SmallHeader/>
+            <div className="course-details-content">
+                <div className="course-details-back">
+                    <p>retour button</p>
+                    <h3>{courseDetails.golf.name}</h3>
                 </div>
-            ))}
+                <div className="course-details-content-info">
+                    <div className="course-details-golf-info">
+                        <div>
+                            <h4>Parcours ({courseDetails.courses.length})</h4>
+                            {courseDetails.courses.map(course => (
+                                <p>{course.name}</p>
+                            ))}
+                        </div>
+                        <div>
+                            <h4>Informations du golf</h4>
+                            <p>{courseDetails.golf.name}</p>
+                            <p>{courseDetails.golf.city}</p>
+                            <p>{courseDetails.golf.postalcode}</p>
+                            <p>{courseDetails.golf.maps_link}</p>
+                        </div>
+                    </div>
+                    <div className="course-details-holes-info">
+                        <h4>{courseDetails.course_details.name}</h4>
+                        <div className="course-card-tags">
+                            <Tag text={`${courseDetails.course_details.number_of_holes} trous`} type="positive"/>
+                            {courseDetails.course_details.pitch_and_putt ?
+                                <Tag text="Pitch and Putt" type="positive"/> : null}
+                            {courseDetails.course_details.compact ? <Tag text="Compact" type="positive"/> : null}
+                        </div>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Trou</th>
+                                <th>Par</th>
+                                <th>Départs</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {courseDetails.course_details.holes.map(hole => (
+                                <tr key={hole.details.id}>
+                                    <td>{hole.hole_number}</td>
+                                    <td>{hole.details.Par}</td>
+                                    <td>
+                                        <table>
+                                            <tbody>
+                                            {hole.tees.map(tee => (
+                                                <tr key={tee.name}>
+                                                    <th>{tee.name}</th>
+                                                    <td>{tee.distance} mètres</td>
+                                                </tr>
+                                            ))}
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

@@ -4,7 +4,6 @@ import LinkButton from "../Buttons/LinkButton/LinkButton";
 import {CourseDetailsDTO} from '../../services/courseService';
 
 import "./CourseCard.css";
-import {Link} from "react-router-dom";
 
 interface CourseCardProps {
     course: CourseDetailsDTO;
@@ -28,9 +27,7 @@ function CourseCard({course}: CourseCardProps) {
             </div>
 
             <div className="course-card-footer">
-                <Link to={`/course-details/${course.id}`}>
-                    <LinkButton text={"Voir les détails"} href={`/course-details/${course.id}`}/>
-                </Link>
+                <LinkButton text={"Voir les détails"} href={`/course-details/${course.id}`}/>
             </div>
 
         </div>

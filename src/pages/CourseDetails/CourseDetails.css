@@ -1,0 +1,45 @@
+@import '../../styles/variables.css';
+@import '../../styles/common.css';
+
+.course-details-content {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px;
+    justify-content: center;
+    align-self: center;
+}
+
+.course-details-back{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.course-details-content-info{
+    display: flex;
+    gap: 20px;
+}
+
+.course-details-golf-info{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.course-details-golf-info div{
+    width: 400px;
+    background-color: #fff;
+    padding: 24px;
+}
+
+.course-details-holes-info{
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: #fff;
+    padding: 24px;
+}

@@ -3,3 +3,11 @@
     src: url('./assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype'),
     url('./assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
 }
+
+.global-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
