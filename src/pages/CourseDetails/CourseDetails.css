@@ -31,17 +31,6 @@
     gap: 16px;
 }
 
-.course-details-holes-info {
-    max-width: 580px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    background-color: #fff;
-    padding: 24px;
-    box-sizing: border-box;
-}
-
 .course-details-content h1 {
     font-family: Inter, serif;
     font-size: 32px;

@@ -5,11 +5,10 @@ import {CourseProps} from '../../services/types.ts';
 import {SmallHeader} from "../../components/SmallHeader/SmallHeader.tsx";
 
 import './CourseDetails.css';
-import Tag from "../../components/Tag/Tag.tsx";
 import {GolfDetailsCard} from "../../components/GolfDetailsCard/GolfDetailsCard.tsx";
 import CourseCardSelector from "../../components/CourseCardSelector/CourseCardSelector.tsx";
 import {ReturnButton} from "../../components/Buttons/ReturnButton/ReturnButton.tsx";
-import {HolesTable} from "../../components/HolesTable/HolesTable.tsx";
+import {HolesCard} from "../../components/HolesCard/HolesCard.tsx";
 
 const CourseDetails: React.FC = () => {
     const {courseId} = useParams<{ courseId: string }>();
@@ -63,14 +62,7 @@ const CourseDetails: React.FC = () => {
                         <GolfDetailsCard courseDetails={courseDetails.golf}/>
                     </div>
                     <div className="course-details-holes-info">
-                        <h4>{courseDetails.name}</h4>
-                        <div className="course-card-tags">
-                            <Tag text={`${courseDetails.numberHoles} trous`} type="positive"/>
-                            {courseDetails.pitchAndPutt ?
-                                <Tag text="Pitch and Putt" type="positive"/> : null}
-                            {courseDetails.compact ? <Tag text="Compact" type="positive"/> : null}
-                        </div>
-                        <HolesTable holes={courseDetails.holes}/>
+                        <HolesCard courseDetails={courseDetails}/>
                     </div>
                 </div>
             </div>
