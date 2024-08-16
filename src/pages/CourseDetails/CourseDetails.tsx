@@ -6,6 +6,7 @@ import {SmallHeader} from "../../components/SmallHeader/SmallHeader.tsx";
 
 import './CourseDetails.css';
 import Tag from "../../components/Tag/Tag.tsx";
+import {GolfDetailsCard} from "../../components/GolfDetailsCard/GolfDetailsCard.tsx";
 
 const CourseDetails: React.FC = () => {
     const {courseId} = useParams<{ courseId: string }>();
@@ -61,13 +62,7 @@ const CourseDetails: React.FC = () => {
                                 <p>{course.name}</p>
                             ))}
                         </div>
-                        <div>
-                            <h4>Informations du golf</h4>
-                            <p>{courseDetails.golf.name}</p>
-                            <p>{courseDetails.golf.city}</p>
-                            <p>{courseDetails.golf.postalCode}</p>
-                            <p>{courseDetails.golf.googleMapLinks}</p>
-                        </div>
+                        <GolfDetailsCard courseDetails={courseDetails.golf}/>
                     </div>
                     <div className="course-details-holes-info">
                         <h4>{courseDetails.name}</h4>
