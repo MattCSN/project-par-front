@@ -8,6 +8,7 @@ import './CourseDetails.css';
 import Tag from "../../components/Tag/Tag.tsx";
 import {GolfDetailsCard} from "../../components/GolfDetailsCard/GolfDetailsCard.tsx";
 import CourseCardSelector from "../../components/CourseCardSelector/CourseCardSelector.tsx";
+import {ReturnButton} from "../../components/Buttons/ReturnButton/ReturnButton.tsx";
 
 const CourseDetails: React.FC = () => {
     const {courseId} = useParams<{ courseId: string }>();
@@ -52,8 +53,8 @@ const CourseDetails: React.FC = () => {
             <SmallHeader/>
             <div className="course-details-content">
                 <div className="course-details-back">
-                    <p>retour button</p>
-                    <h3>{courseDetails.golf.name}</h3>
+                    <ReturnButton text="Retour à l’accueil"/>
+                    <h1>{courseDetails.golf.name}</h1>
                 </div>
                 <div className="course-details-content-info">
                     <div className="course-details-golf-info">

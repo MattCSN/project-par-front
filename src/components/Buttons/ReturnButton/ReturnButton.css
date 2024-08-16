@@ -1,0 +1,26 @@
+@import '../../../styles/variables.css';
+@import '../../../styles/common.css';
+
+.return-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font: var(--font-weight-bold) var(--font-size-medium)/var(--line-height-medium) var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    text-align: left;
+    color: var(--color-tertiary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.return-button:hover {
+    text-decoration: underline;
+}
+
+.return-button:active {
+    color: var(--color-primary);
+}
+
+.return-button:active svg path {
+    fill: var(--color-primary);
+}

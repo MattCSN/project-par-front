@@ -41,3 +41,13 @@
     padding: 24px;
     box-sizing: border-box;
 }
+
+.course-details-content h1 {
+    font-family: Inter, serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: left;
+
+    color: #041213;
+}
