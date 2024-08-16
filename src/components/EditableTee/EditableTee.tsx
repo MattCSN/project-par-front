@@ -8,7 +8,7 @@ interface EditableTeeProps {
 
 export function EditableTee({id, color, value}: EditableTeeProps) {
     return (
-        <div className="editable-tee-container">
+        <div key={id} className="editable-tee-container">
             <h6>{color}</h6>
             <div className="editable-tee" key={id}>
                 <input

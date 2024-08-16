@@ -16,10 +16,9 @@ export function CourseSelectorField({id, name, active, numberHoles}: GolfDetails
     };
 
     return (
-        <div
-            className={`course-selector-field-container ${active ? 'active' : ''}`}
-            onClick={handleClick}
-        >
+        <div key={id}
+             className={`course-selector-field-container ${active ? 'active' : ''}`}
+             onClick={handleClick}>
             <div className="course-selector-field">
                 <p>{name} ({numberHoles} trous)</p>
             </div>

@@ -13,10 +13,12 @@ function CourseCardSelector({courses, activeCourseId}: CourseCardSelectorProps) 
             <h2>Parcours ({courses.length})</h2>
             <div className="course-card-selector-fields">
                 {courses.map(course => (
-                    <CourseSelectorField id={course.id}
+                    <CourseSelectorField
+                        key={course.id}
+                        id={course.id}
                         name={course.name}
-                                         numberHoles={course.numberHoles}
-                                         active={course.id == activeCourseId}/>
+                        numberHoles={course.numberHoles}
+                        active={course.id == activeCourseId}/>
                 ))}
             </div>
         </div>

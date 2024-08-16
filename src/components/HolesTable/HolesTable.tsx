@@ -41,8 +41,11 @@ export const HolesTable = ({holes}: HolesTableProps) => {
                             <div className="holes-table-data-tees">
                                 {hole.tees ? (
                                     hole.tees.map(tee => (
-                                        <EditableTee id={tee.id} color={tee.Color}
-                                                     value={tee.Distance}/>
+                                        <EditableTee
+                                            key={tee.id}
+                                            id={tee.id}
+                                            color={tee.Color}
+                                            value={tee.Distance}/>
                                     ))
                                 ) : (
                                     <td colSpan={2}>No tees available</td>
