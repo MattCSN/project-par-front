@@ -26,4 +26,6 @@ td, th {
     padding: 0;
     border: 0;
     text-align: justify;
+    border-spacing: 0;
+    border: none;
 }

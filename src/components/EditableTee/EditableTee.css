@@ -1,0 +1,59 @@
+@import '../../styles/variables.css';
+@import '../../styles/common.css';
+
+.editable-tee-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.editable-tee-container h6 {
+    width: 80px;
+
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    font-variation-settings: 'slnt' 0;
+
+    color: #041213;
+}
+
+.editable-tee p {
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+    color: #64748B;
+}
+
+.editable-tee {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.editable-tee-input {
+    width: 110px;
+    padding: 15px;
+
+    background: #FFFFFF;
+
+    border-radius: 8px;
+    border: 1px solid #CBD5E1;
+
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+    color: #041213;
+}

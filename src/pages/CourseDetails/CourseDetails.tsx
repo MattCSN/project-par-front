@@ -9,6 +9,7 @@ import Tag from "../../components/Tag/Tag.tsx";
 import {GolfDetailsCard} from "../../components/GolfDetailsCard/GolfDetailsCard.tsx";
 import CourseCardSelector from "../../components/CourseCardSelector/CourseCardSelector.tsx";
 import {ReturnButton} from "../../components/Buttons/ReturnButton/ReturnButton.tsx";
+import {HolesTable} from "../../components/HolesTable/HolesTable.tsx";
 
 const CourseDetails: React.FC = () => {
     const {courseId} = useParams<{ courseId: string }>();
@@ -69,41 +70,7 @@ const CourseDetails: React.FC = () => {
                                 <Tag text="Pitch and Putt" type="positive"/> : null}
                             {courseDetails.compact ? <Tag text="Compact" type="positive"/> : null}
                         </div>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Trou</th>
-                                <th>Par</th>
-                                <th>Départs</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {courseDetails.holes.map(hole => (
-                                <tr key={hole.id}>
-                                    <td>{hole.HoleNumber}</td>
-                                    <td>{hole.Par}</td>
-                                    <td>
-                                        <table>
-                                            <tbody>
-                                            {hole.tees ? (
-                                                hole.tees.map(tee => (
-                                                    <tr key={tee.HoleID}>
-                                                        <th>{tee.Color}</th>
-                                                        <td>{tee.Distance} mètres</td>
-                                                    </tr>
-                                                ))
-                                            ) : (
-                                                <tr>
-                                                    <td colSpan={2}>No tees available</td>
-                                                </tr>
-                                            )}
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                            ))}
-                            </tbody>
-                        </table>
+                        <HolesTable holes={courseDetails.holes}/>
                     </div>
                 </div>
             </div>
