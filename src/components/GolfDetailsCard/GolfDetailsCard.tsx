@@ -15,7 +15,7 @@ export function GolfDetailsCard({courseDetails}: GolfDetailsCardProps) {
                 <GolfDetailsField title="Nom" value={courseDetails.name}/>
                 <GolfDetailsField title="Ville" value={courseDetails.city}/>
                 <GolfDetailsField title="Code postal" value={courseDetails.postalCode}/>
-                <GolfDetailsField title="Maps" value={courseDetails.googleMapLinks} last={true}/>
+                <GolfDetailsField title="Maps" value={courseDetails.googleMapLinks} link={true} last={true}/>
             </div>
         </div>
     );
