@@ -12,34 +12,40 @@
     align-self: center;
 }
 
-.course-details-back{
+.course-details-back {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.course-details-content-info{
+.course-details-content-info {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
-.course-details-golf-info{
+.course-details-golf-info {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.course-details-golf-info div{
-    width: 400px;
+.course-details-golf-info div {
+    max-width: 400px;
+    width: 100%;
     background-color: #fff;
     padding: 24px;
+    box-sizing: border-box;
 }
 
-.course-details-holes-info{
-    width: 580px;
+.course-details-holes-info {
+    max-width: 580px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 24px;
     background-color: #fff;
     padding: 24px;
+    box-sizing: border-box;
 }

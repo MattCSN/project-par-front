@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {getCourseDetailsById} from '../../services/courseService.ts';
-import {ApiResponse} from '../../services/types.ts';
+import {CourseProps} from '../../services/types.ts';
 import {SmallHeader} from "../../components/SmallHeader/SmallHeader.tsx";
 
 import './CourseDetails.css';
@@ -9,7 +9,7 @@ import Tag from "../../components/Tag/Tag.tsx";
 
 const CourseDetails: React.FC = () => {
     const {courseId} = useParams<{ courseId: string }>();
-    const [courseDetails, setCourseDetails] = useState<ApiResponse | null>(null);
+    const [courseDetails, setCourseDetails] = useState<CourseProps | null>(null);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
@@ -17,7 +17,7 @@ const CourseDetails: React.FC = () => {
             if (courseId) {
                 try {
                     console.log("Fetching course details for ID:", courseId);
-                    const response: ApiResponse = await getCourseDetailsById(courseId);
+                    const response: CourseProps = await getCourseDetailsById(courseId);
                     console.log("API Response:", response);
                     setCourseDetails(response);
                 } catch (error) {
@@ -56,8 +56,8 @@ const CourseDetails: React.FC = () => {
                 <div className="course-details-content-info">
                     <div className="course-details-golf-info">
                         <div>
-                            <h4>Parcours ({courseDetails.courses.length})</h4>
-                            {courseDetails.courses.map(course => (
+                            <h4>Parcours ({courseDetails.golf.courses.length})</h4>
+                            {courseDetails.golf.courses.map(course => (
                                 <p>{course.name}</p>
                             ))}
                         </div>
@@ -65,17 +65,17 @@ const CourseDetails: React.FC = () => {
                             <h4>Informations du golf</h4>
                             <p>{courseDetails.golf.name}</p>
                             <p>{courseDetails.golf.city}</p>
-                            <p>{courseDetails.golf.postalcode}</p>
-                            <p>{courseDetails.golf.maps_link}</p>
+                            <p>{courseDetails.golf.postalCode}</p>
+                            <p>{courseDetails.golf.googleMapLinks}</p>
                         </div>
                     </div>
                     <div className="course-details-holes-info">
-                        <h4>{courseDetails.course_details.name}</h4>
+                        <h4>{courseDetails.name}</h4>
                         <div className="course-card-tags">
-                            <Tag text={`${courseDetails.course_details.number_of_holes} trous`} type="positive"/>
-                            {courseDetails.course_details.pitch_and_putt ?
+                            <Tag text={`${courseDetails.numberHoles} trous`} type="positive"/>
+                            {courseDetails.pitchAndPutt ?
                                 <Tag text="Pitch and Putt" type="positive"/> : null}
-                            {courseDetails.course_details.compact ? <Tag text="Compact" type="positive"/> : null}
+                            {courseDetails.compact ? <Tag text="Compact" type="positive"/> : null}
                         </div>
                         <table>
                             <thead>
@@ -86,19 +86,25 @@ const CourseDetails: React.FC = () => {
                             </tr>
                             </thead>
                             <tbody>
-                            {courseDetails.course_details.holes.map(hole => (
-                                <tr key={hole.details.id}>
-                                    <td>{hole.hole_number}</td>
-                                    <td>{hole.details.Par}</td>
+                            {courseDetails.holes.map(hole => (
+                                <tr key={hole.id}>
+                                    <td>{hole.HoleNumber}</td>
+                                    <td>{hole.Par}</td>
                                     <td>
                                         <table>
                                             <tbody>
-                                            {hole.tees.map(tee => (
-                                                <tr key={tee.name}>
-                                                    <th>{tee.name}</th>
-                                                    <td>{tee.distance} mètres</td>
+                                            {hole.tees ? (
+                                                hole.tees.map(tee => (
+                                                    <tr key={tee.HoleID}>
+                                                        <th>{tee.Color}</th>
+                                                        <td>{tee.Distance} mètres</td>
+                                                    </tr>
+                                                ))
+                                            ) : (
+                                                <tr>
+                                                    <td colSpan={2}>No tees available</td>
                                                 </tr>
-                                            ))}
+                                            )}
                                             </tbody>
                                         </table>
                                     </td>
