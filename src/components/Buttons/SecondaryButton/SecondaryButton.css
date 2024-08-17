@@ -2,9 +2,6 @@
 @import '../../../styles/common.css';
 
 .secondary-button {
-    display: flex;
-    gap: 8px;
-
     background: #FFFFFF;
 
     border: 1px solid #B8E0DD;

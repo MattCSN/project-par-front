@@ -1,17 +1,17 @@
 import React from "react";
 import Button from "../Button/Button.tsx";
-import EditIcon from "../../../assets/svg/icons/edit.svg"; // Adjust the path as necessary
 import "./SecondaryButton.css";
 
 interface SecondaryButtonProps {
     text: string;
     onClick: () => void;
+    children?: React.ReactNode;
 }
 
-const SecondaryButton: React.FC<SecondaryButtonProps> = ({text, onClick}) => {
+const SecondaryButton: React.FC<SecondaryButtonProps> = ({text, onClick, children}) => {
     return (
         <Button text={text} className="secondary-button" onClick={onClick}>
-            <img src={EditIcon} alt="Edit Icon" className="edit-icon"/>
+            {children ? children : null}
         </Button>
     );
 }

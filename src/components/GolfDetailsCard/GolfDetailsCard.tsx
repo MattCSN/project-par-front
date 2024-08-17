@@ -4,6 +4,8 @@ import "./GolfDetailsCard.css";
 import {GolfDetailsField} from "../GolfDetailsField/GolfDetailsField.tsx";
 import SecondaryButton from "../Buttons/SecondaryButton/SecondaryButton.tsx";
 
+import EditIcon from "../../assets/svg/icons/edit.svg";
+
 interface GolfDetailsCardProps {
     courseDetails: GolfProps;
 }
@@ -20,7 +22,9 @@ export function GolfDetailsCard({courseDetails}: GolfDetailsCardProps) {
                     <GolfDetailsField title="Maps" value={courseDetails.googleMapLinks} link={true} last={true}/>
                 </div>
             </div>
-            <SecondaryButton text="Modifier" onClick={() => console.log("Edit button clicked")}/>
+            <SecondaryButton text="Modifier" onClick={() => console.log("Edit button clicked")}>
+                <img src={EditIcon} alt="Edit Icon" className="edit-icon"/>
+            </SecondaryButton>
         </div>
     );
 }

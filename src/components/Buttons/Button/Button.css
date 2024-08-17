@@ -4,6 +4,7 @@
 .button {
     display: flex;
     justify-content: center;
+    gap: 8px;
     height: 40px;
     padding: 10px 16px;
     border-radius: var(--border-radius-large);

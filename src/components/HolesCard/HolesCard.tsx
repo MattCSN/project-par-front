@@ -4,6 +4,8 @@ import {HolesTable} from "../HolesTable/HolesTable.tsx";
 import Tag from "../Tag/Tag.tsx";
 
 import "./HolesCard.css";
+import PrimaryButton from "../Buttons/PrimaryButton/PrimaryButton.tsx";
+import EditIcon from "../../assets/svg/icons/edit-white.svg";
 
 interface HolesCardProps {
     courseDetails: CourseProps;
@@ -21,8 +23,11 @@ export function HolesCard({courseDetails}: HolesCardProps) {
                     {courseDetails.compact ? <Tag text="Compact" type="positive"/> : null}
                 </div>
             </div>
+            <PrimaryButton text="Modifier" onClick={() => console.log("Edit button clicked")}>
+                <img src={EditIcon} alt="Edit Icon" className="edit-icon"/>
+            </PrimaryButton>
             <div className="holes-card-content">
-                <HolesTable holes={courseDetails.holes}/>
+            <HolesTable holes={courseDetails.holes}/>
             </div>
         </div>
     );
