@@ -14,7 +14,7 @@ export function HolesCard({courseDetails}: HolesCardProps) {
         <div className="holes-card-container">
             <div className="holes-card-header">
                 <h2>{courseDetails.name}</h2>
-                <div className="course-card-tags">
+                <div className="holes-card-tags">
                     <Tag text={`${courseDetails.numberHoles} trous`} type="positive"/>
                     {courseDetails.pitchAndPutt ?
                         <Tag text="Pitch and Putt" type="positive"/> : null}

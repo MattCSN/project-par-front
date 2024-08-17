@@ -2,6 +2,7 @@ import {GolfProps} from "../../services/types.ts";
 
 import "./GolfDetailsCard.css";
 import {GolfDetailsField} from "../GolfDetailsField/GolfDetailsField.tsx";
+import SecondaryButton from "../Buttons/SecondaryButton/SecondaryButton.tsx";
 
 interface GolfDetailsCardProps {
     courseDetails: GolfProps;
@@ -10,13 +11,16 @@ interface GolfDetailsCardProps {
 export function GolfDetailsCard({courseDetails}: GolfDetailsCardProps) {
     return (
         <div className="golf-details-cards-container">
-            <h2>Informations du golf</h2>
-            <div className="golf-details-card-fields">
-                <GolfDetailsField title="Nom" value={courseDetails.name}/>
-                <GolfDetailsField title="Ville" value={courseDetails.city}/>
-                <GolfDetailsField title="Code postal" value={courseDetails.postalCode}/>
-                <GolfDetailsField title="Maps" value={courseDetails.googleMapLinks} link={true} last={true}/>
+            <div className="golf-details-cards-content">
+                <h2>Informations du golf</h2>
+                <div className="golf-details-card-fields">
+                    <GolfDetailsField title="Nom" value={courseDetails.name}/>
+                    <GolfDetailsField title="Ville" value={courseDetails.city}/>
+                    <GolfDetailsField title="Code postal" value={courseDetails.postalCode}/>
+                    <GolfDetailsField title="Maps" value={courseDetails.googleMapLinks} link={true} last={true}/>
+                </div>
             </div>
+            <SecondaryButton text="Modifier" onClick={() => console.log("Edit button clicked")}/>
         </div>
     );
 }
