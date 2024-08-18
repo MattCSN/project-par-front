@@ -1,9 +1,24 @@
-@import '../../styles/variables.css';
-@import '../../styles/common.css';
-
 .holes-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed; /* Ensure fixed layout for table */
+}
+
+.holes-table-column-par div.holes-table-column-par {
+    max-width: 80px;
+    padding-right: 44px;
+}
+
+.holes-table-column-hole {
+    width: 104px;
+}
+
+.holes-table-column-par {
+    width: 124px;
+}
+
+.holes-table-column-tee {
+    width: 304px;
 }
 
 .holes-table-row {
@@ -49,30 +64,7 @@
     padding-right: 44px;
 }
 
-.holes-table-par-input {
-    width: 80px;
-    padding: 15px;
-
-    background: #FFFFFF;
-
-    border-radius: 8px;
-    border: 1px solid #CBD5E1;
-
-    box-sizing: border-box;
-
-    font-family: Inter, serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.01em;
-    text-align: left;
-
-    color: #041213;
-
-}
-
 .holes-table-cell h5 {
-    width: 80px;
     padding: 16px 24px 16px 0;
 
     font-family: Inter, serif;

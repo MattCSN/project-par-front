@@ -1,5 +1,3 @@
-@import '../../../styles/variables.css';
-@import '../../../styles/common.css';
 
 .primary-button {
     background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);

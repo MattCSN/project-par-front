@@ -1,5 +1,3 @@
-@import '../../../styles/variables.css';
-@import '../../../styles/common.css';
 
 .action-button {
     color: var(--color-text-primary);

@@ -1,8 +1,8 @@
-@import '../../styles/variables.css';
-@import '../../styles/common.css';
+
 
 .holes-card-container {
-    width: 580px;
+    width: 100%;
+    max-width: 580px;
     background-color: #fff;
     padding: 24px;
     box-sizing: border-box;

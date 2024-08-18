@@ -1,4 +1,5 @@
 import "./EditableTee.css";
+import {InputNumber} from "../Input/InputNumber/InputNumber.tsx";
 
 interface EditableTeeProps {
     id: string;
@@ -11,14 +12,7 @@ export function EditableTee({id, color, value}: EditableTeeProps) {
         <div key={id} className="editable-tee-container">
             <h6>{color}</h6>
             <div className="editable-tee" key={id}>
-                <input
-                    className="editable-tee-input"
-                    type="number"
-                    id="Par"
-                    key={id}
-                    placeholder="Distance"
-                    defaultValue={value}
-                />
+                <InputNumber inputId={"Distance"} value={value} placeHolder={"Distance"}/>
                 <p>mètres</p>
             </div>
         </div>
