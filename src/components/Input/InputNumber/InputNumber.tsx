@@ -1,12 +1,23 @@
 import "./InputNumber.css";
+import React, {useState} from "react";
 
 interface InputNumberProps {
     inputId: string;
-    value: number;
+    holeId: string;
+    defaultValue: number;
     placeHolder: string;
+    onUpdate: (id: string, value: number) => Promise<number>;
 }
 
-export const InputNumber = ({inputId, value, placeHolder}: InputNumberProps) => {
+export const InputNumber = ({inputId, holeId, defaultValue, placeHolder, onUpdate}: InputNumberProps) => {
+    const [value, setValue] = useState<number>(defaultValue);
+
+
+    const handleUpdate = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = parseFloat(event.target.value);
+
+        setValue(await onUpdate(holeId, newValue));
+    };
 
     return (
         <div className="input-number">
@@ -14,8 +25,10 @@ export const InputNumber = ({inputId, value, placeHolder}: InputNumberProps) => 
                 type="number"
                 className="input-number-input"
                 id={inputId}
-                defaultValue={value}
+                defaultValue={defaultValue}
                 placeholder={placeHolder}
+                value={value}
+                onChange={handleUpdate}
             />
         </div>
     );

@@ -13,44 +13,46 @@ export type CourseDetailsDTO = {
     postalCode: string;
 };
 
-export const getCourseDetails = async (page: number = 1, pageSize: number = 12) => {
+const fetchData = async (url: string, params: object = {}) => {
     try {
-        const response = await axiosInstance.get('/v1/courses/details', {
-            params: {page, pageSize},
-        });
-        return response.data;
+        const {data} = await axiosInstance.get(url, {params});
+        return data;
     } catch (error) {
         if (isAxiosError(error) && error.response?.status === 404) {
-            throw new Error('Course details not found (404)');
+            throw new Error('Resource not found (404)');
         }
-        throw new Error('Error fetching course details');
+        throw new Error('Error fetching data');
     }
 };
 
-export const searchCourseDetails = async (searchTerm: string, page: number = 1, pageSize: number = 12) => {
-    try {
-        const response = await axiosInstance.get('/v1/courses/details/search', {
-            params: {searchTerm, page, pageSize},
-        });
-        return response.data;
-    } catch (error) {
-        if (isAxiosError(error) && error.response?.status === 404) {
-            throw new Error('Search results not found (404)');
-        }
-        throw new Error('Error searching course details');
-    }
-};
+export const getCourseDetails = (page: number = 1, pageSize: number = 12) =>
+    fetchData('/v1/courses/details', {page, pageSize});
 
-export const getCourseDetailsById = async (id: string) => {
+export const searchCourseDetails = (searchTerm: string, page: number = 1, pageSize: number = 12) =>
+    fetchData('/v1/courses/details/search', {searchTerm, page, pageSize});
+
+export const getCourseDetailsById = (id: string) =>
+    fetchData(`/v1/courses/${id}/details`);
+
+const API_BASE_URL = 'http://localhost:8080/v1';
+
+export const updateHolePar = async (holeId: string, par: number): Promise<number> => {
     try {
-        const response = await axiosInstance.get('/v1/courses/' + id + '/details');
-        console.log("Response Data:", response.data);
-        console.log("Full Response:", response);
-        return response.data;
-    } catch (error) {
-        if (isAxiosError(error) && error.response?.status === 404) {
-            throw new Error('Search results not found (404)');
+        const response = await fetch(`${API_BASE_URL}/holes/${holeId}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({par}),
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Error updating hole par');
         }
-        throw new Error('Failed to fetch course details');
+
+        const responseData = await response.json();
+        return responseData.Par;
+    } catch (error) {
+        console.error('Error updating hole par:', error);
+        throw error;
     }
 };

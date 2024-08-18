@@ -12,7 +12,11 @@ export function EditableTee({id, color, value}: EditableTeeProps) {
         <div key={id} className="editable-tee-container">
             <h6>{color}</h6>
             <div className="editable-tee" key={id}>
-                <InputNumber inputId={"Distance"} value={value} placeHolder={"Distance"}/>
+                <InputNumber inputId={"Distance"} defaultValue={value} placeHolder={"Distance"} onUpdate={
+                    (value: number) => {
+                        console.log("Just set DISTANCE to " + value);
+                    }
+                }/>
                 <p>mètres</p>
             </div>
         </div>
