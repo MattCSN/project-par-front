@@ -15,8 +15,8 @@ export const InputNumber = ({inputId, id, defaultValue, placeHolder, onUpdate}: 
 
     const handleUpdate = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = parseFloat(event.target.value);
-
-        setValue(await onUpdate(id, newValue));
+        await onUpdate(id, newValue)
+        setValue(newValue);
     };
 
     return (
@@ -25,7 +25,6 @@ export const InputNumber = ({inputId, id, defaultValue, placeHolder, onUpdate}: 
                 type="number"
                 className="input-number-input"
                 id={inputId}
-                defaultValue={defaultValue}
                 placeholder={placeHolder}
                 value={value}
                 onChange={handleUpdate}

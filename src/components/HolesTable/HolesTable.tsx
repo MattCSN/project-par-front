@@ -33,11 +33,12 @@ export const HolesTable = ({holes}: HolesTableProps) => {
                         </td>
                         <td className="holes-table-cell holes-table-column-par">
                             <div className="holes-table-column-par">
-                                <InputNumber inputId={"Par"}
-                                             id={hole.id}
-                                             defaultValue={hole.Par}
-                                             placeHolder={"Par"}
-                                             onUpdate={handleParUpdate}/>
+                                <InputNumber
+                                    inputId={"Par"}
+                                    id={hole.id}
+                                    defaultValue={hole.Par}
+                                    placeHolder={"Par"}
+                                    onUpdate={handleParUpdate}/>
                             </div>
                         </td>
                         <td className="holes-table-cell holes-table-column-tees">

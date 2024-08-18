@@ -1,0 +1,45 @@
+.input-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    font-variation-settings: 'slnt' 0;
+
+    color: #041213;
+}
+
+
+.input-text-input {
+    padding: 15px;
+    height: 24px;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #CBD5E1;
+    outline: none;
+
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #041213;
+}
+
+.input-text:hover input {
+    border: 1px solid var(--color-primary);
+}
+
+
+.input-text:focus-within input {
+    border: 2px solid var(--color-primary);
+    padding: 14px;
+}
