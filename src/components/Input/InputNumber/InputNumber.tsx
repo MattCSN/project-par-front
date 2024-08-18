@@ -3,20 +3,20 @@ import React, {useState} from "react";
 
 interface InputNumberProps {
     inputId: string;
-    holeId: string;
+    id: string;
     defaultValue: number;
     placeHolder: string;
     onUpdate: (id: string, value: number) => Promise<number>;
 }
 
-export const InputNumber = ({inputId, holeId, defaultValue, placeHolder, onUpdate}: InputNumberProps) => {
+export const InputNumber = ({inputId, id, defaultValue, placeHolder, onUpdate}: InputNumberProps) => {
     const [value, setValue] = useState<number>(defaultValue);
 
 
     const handleUpdate = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = parseFloat(event.target.value);
 
-        setValue(await onUpdate(holeId, newValue));
+        setValue(await onUpdate(id, newValue));
     };
 
     return (

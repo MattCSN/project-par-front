@@ -34,7 +34,7 @@ export const HolesTable = ({holes}: HolesTableProps) => {
                         <td className="holes-table-cell holes-table-column-par">
                             <div className="holes-table-column-par">
                                 <InputNumber inputId={"Par"}
-                                             holeId={hole.id}
+                                             id={hole.id}
                                              defaultValue={hole.Par}
                                              placeHolder={"Par"}
                                              onUpdate={handleParUpdate}/>

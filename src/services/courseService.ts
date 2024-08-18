@@ -34,25 +34,18 @@ export const searchCourseDetails = (searchTerm: string, page: number = 1, pageSi
 export const getCourseDetailsById = (id: string) =>
     fetchData(`/v1/courses/${id}/details`);
 
-const API_BASE_URL = 'http://localhost:8080/v1';
-
-export const updateHolePar = async (holeId: string, par: number): Promise<number> => {
+const updateData = async (url: string, payload: object) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/holes/${holeId}`, {
-            method: 'PATCH',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({par}),
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Error updating hole par');
-        }
-
-        const responseData = await response.json();
-        return responseData.Par;
+        const {data} = await axiosInstance.patch(url, payload);
+        return data;
     } catch (error) {
-        console.error('Error updating hole par:', error);
+        console.error('Error updating data:', error);
         throw error;
     }
 };
+
+export const updateHolePar = (holeId: string, par: number) =>
+    updateData(`/v1/holes/${holeId}`, {par}).then(data => data.Par);
+
+export const updateTeeDistance = (teeId: string, distance: number) =>
+    updateData(`/v1/tees/${teeId}`, {distance}).then(data => data.Distance);
