@@ -19,8 +19,6 @@ export function GolfDetailsCard({courseDetails}: GolfDetailsCardProps) {
     const [golfDetails, setGolfDetails] = useState(courseDetails);
 
     const handleSave = async (updatedDetails: GolfProps) => {
-        console.log(updatedDetails);
-
         setModalVisible(false);
         await updateGolf(updatedDetails.id, updatedDetails.name, updatedDetails.city, updatedDetails.postalCode, updatedDetails.googleMapLinks);
         setGolfDetails(updatedDetails);

@@ -22,6 +22,12 @@ export const EditGolfForm = ({golfDetails, onSave}: EditGolfFormProps) => {
         onSave(formData);
     };
 
+    const handleCancel = () => {
+        // Reset form data to initial golfDetails or perform any other cancel action
+        setFormData(golfDetails);
+        console.log("Annuler");
+    };
+
     return (
         <form className="edit-golf-form" onSubmit={(e) => {
             e.preventDefault();
@@ -58,7 +64,7 @@ export const EditGolfForm = ({golfDetails, onSave}: EditGolfFormProps) => {
                 onUpdate={handleUpdate}
             />
             <div className="edit-golf-buttons">
-                <SecondaryButton text={"Annuler"} onClick={() => console.log("Annuler")}/>
+                <SecondaryButton text={"Annuler"} onClick={handleCancel}/>
                 <PrimaryButton text={"Modifier"} onClick={() => handleSubmit()}/>
             </div>
         </form>

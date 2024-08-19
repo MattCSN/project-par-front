@@ -14,6 +14,7 @@ export const HolesTable = ({holes}: HolesTableProps) => {
         return await updateHolePar(id, newValue);
     };
 
+
     return (
         <div className="holes-table-container">
             <table className="holes-table">
@@ -44,7 +45,7 @@ export const HolesTable = ({holes}: HolesTableProps) => {
                         <td className="holes-table-cell holes-table-column-tees">
                             <div className="holes-table-data-tees">
                                 {hole.tees ? (
-                                    hole.tees.map(tee => (
+                                    hole.tees.sort((a, b) => a.Distance - b.Distance).map(tee => (
                                         <EditableTee
                                             key={tee.id}
                                             id={tee.id}
@@ -52,7 +53,8 @@ export const HolesTable = ({holes}: HolesTableProps) => {
                                             value={tee.Distance}/>
                                     ))
                                 ) : (
-                                    <td colSpan={2}>No tees available</td>
+                                    <td colSpan={2}>No tees available
+                                    </td>
                                 )}
                             </div>
                         </td>

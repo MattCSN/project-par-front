@@ -1,0 +1,13 @@
+.edit-course-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.edit-course-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+
+    padding-top: 8px;
+}
