@@ -22,7 +22,11 @@ export function HolesCard({details}: HolesCardProps) {
     const handleSave = async (updatedDetails: CourseProps, updatedColors: string[]) => {
         setModalVisible(false);
         await updateCourse(updatedDetails.id, updatedDetails.name, updatedDetails.pitchAndPutt, updatedDetails.compact);
-        await updateCourseColors(updatedDetails.id, updatedColors);
+        let newTees = await updateCourseColors(updatedDetails.id, updatedColors);
+        console.log(newTees);
+        updatedDetails.holes.forEach(hole => {
+            hole.tees = newTees.filter((tee: any) => tee.HoleID === hole.id);
+        });
         setCourseDetails(updatedDetails);
     };
 
@@ -32,8 +36,7 @@ export function HolesCard({details}: HolesCardProps) {
                 <h2>{courseDetails.name}</h2>
                 <div className="holes-card-tags">
                     <Tag text={`${courseDetails.numberHoles} trous`} type="positive"/>
-                    {courseDetails.pitchAndPutt ?
-                        <Tag text="Pitch and Putt" type="positive"/> : null}
+                    {courseDetails.pitchAndPutt ? <Tag text="Pitch and Putt" type="positive"/> : null}
                     {courseDetails.compact ? <Tag text="Compact" type="positive"/> : null}
                 </div>
             </div>
