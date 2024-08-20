@@ -1,5 +1,6 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import {useQuery} from 'react-query';
+import {useDebounce} from "../../hooks/useDebounce.ts";
 import {Header} from '../../components/Header/Header.tsx';
 import {getCourseDetails, searchCourseDetails} from '../../services/courseService';
 
@@ -12,12 +13,25 @@ const HomePage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchResults, setSearchResults] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
+    const debouncedSearchTerm = useDebounce(searchQuery, 500);
+
+    useEffect(() => {
+        if (debouncedSearchTerm) {
+            fetchCourseDetails(debouncedSearchTerm, 1);
+        }
+    }, [debouncedSearchTerm]);
 
     const {data: coursesDTO, error, isLoading} = useQuery(
         ['courseDetails', currentPage],
         () => getCourseDetails(currentPage, 12),
         {enabled: !searchQuery}
     );
+
+    useEffect(() => {
+        if (!searchQuery && coursesDTO) {
+            setSearchResults(coursesDTO);
+        }
+    }, [searchQuery, coursesDTO]);
 
     const fetchCourseDetails = async (query: string, page: number) => {
         try {
@@ -28,10 +42,9 @@ const HomePage = () => {
         }
     };
 
-    const handleSearch = async (query: string) => {
+    const handleSearch = (query: string) => {
         setCurrentPage(1);
         setSearchQuery(query);
-        await fetchCourseDetails(query, 1);
     };
 
     const handlePageChange = async (newPage: number) => {

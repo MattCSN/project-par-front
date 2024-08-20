@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import {useEffect, useState} from 'react'
 
 /**
  * Used to debounce a quickly changing value.
