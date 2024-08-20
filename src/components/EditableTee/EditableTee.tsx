@@ -10,19 +10,20 @@ interface EditableTeeProps {
 
 export function EditableTee({id, color, value}: EditableTeeProps) {
     const handleDistanceUpdate = async (id: string, newValue: number): Promise<number> => {
-        return await updateTeeDistance(id, newValue);
+        return updateTeeDistance(id, newValue);
     };
 
     return (
-        <div key={id} className="editable-tee-container">
+        <div className="editable-tee-container">
             <h6>{color}</h6>
-            <div className="editable-tee" key={id}>
+            <div className="editable-tee">
                 <InputNumber
-                    inputId={"Distance"}
+                    inputId="Distance"
                     id={id}
                     defaultValue={value}
-                    placeHolder={"Distance"}
-                    onUpdate={handleDistanceUpdate}/>
+                    placeHolder="Distance"
+                    onUpdate={handleDistanceUpdate}
+                />
                 <p>mètres</p>
             </div>
         </div>

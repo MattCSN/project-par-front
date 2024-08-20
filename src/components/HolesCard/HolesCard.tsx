@@ -22,10 +22,9 @@ export function HolesCard({details}: HolesCardProps) {
     const handleSave = async (updatedDetails: CourseProps, updatedColors: string[]) => {
         setModalVisible(false);
         await updateCourse(updatedDetails.id, updatedDetails.name, updatedDetails.pitchAndPutt, updatedDetails.compact);
-        let newTees = await updateCourseColors(updatedDetails.id, updatedColors);
-        console.log(newTees);
+        const newTees = await updateCourseColors(updatedDetails.id, updatedColors);
         updatedDetails.holes.forEach(hole => {
-            hole.tees = newTees.filter((tee: any) => tee.HoleID === hole.id);
+            hole.tees = newTees.filter((tee: { HoleID: string; }) => tee.HoleID === hole.id);
         });
         setCourseDetails(updatedDetails);
     };
@@ -36,8 +35,8 @@ export function HolesCard({details}: HolesCardProps) {
                 <h2>{courseDetails.name}</h2>
                 <div className="holes-card-tags">
                     <Tag text={`${courseDetails.numberHoles} trous`} type="positive"/>
-                    {courseDetails.pitchAndPutt ? <Tag text="Pitch and Putt" type="positive"/> : null}
-                    {courseDetails.compact ? <Tag text="Compact" type="positive"/> : null}
+                    {courseDetails.pitchAndPutt && <Tag text="Pitch and Putt" type="positive"/>}
+                    {courseDetails.compact && <Tag text="Compact" type="positive"/>}
                 </div>
             </div>
             <PrimaryButton text="Modifier" onClick={() => setModalVisible(true)}>
@@ -47,7 +46,7 @@ export function HolesCard({details}: HolesCardProps) {
                 <HolesTable holes={courseDetails.holes}/>
             </div>
             <Modal isVisible={isModalVisible} onClose={() => setModalVisible(false)}
-                   title={"Modifier les informations du parcours"}>
+                   title="Modifier les informations du parcours">
                 <EditCourseForm courseDetails={courseDetails} onSave={handleSave}/>
             </Modal>
         </div>
