@@ -9,19 +9,20 @@ import EditIcon from "../../assets/svg/icons/edit-white.svg";
 import {Modal} from "../Modal/Modal.tsx";
 import {useState} from "react";
 import {EditCourseForm} from "../EditCourseForm/EditCourseForm.tsx";
+import {updateCourse} from "../../services/courseService.ts";
 
 interface HolesCardProps {
-    courseDetails: CourseProps;
+    details: CourseProps;
 }
 
-export function HolesCard({courseDetails}: HolesCardProps) {
+export function HolesCard({details}: HolesCardProps) {
     const [isModalVisible, setModalVisible] = useState(false);
-    const [selectedCourseDetails, setGolfDetails] = useState(courseDetails);
+    const [courseDetails, setCourseDetails] = useState(details);
 
     const handleSave = async (updatedDetails: CourseProps) => {
         setModalVisible(false);
-        // await updateGolf(updatedDetails.id, updatedDetails.name, updatedDetails.city, updatedDetails.postalCode, updatedDetails.googleMapLinks);
-        setGolfDetails(updatedDetails);
+        await updateCourse(updatedDetails.id, updatedDetails.name, updatedDetails.pitchAndPutt, updatedDetails.compact);
+        setCourseDetails(updatedDetails);
     };
 
     return (
@@ -43,7 +44,7 @@ export function HolesCard({courseDetails}: HolesCardProps) {
             </div>
             <Modal isVisible={isModalVisible} onClose={() => setModalVisible(false)}
                    title={"Modifier les informations du parcours"}>
-                <EditCourseForm courseDetails={selectedCourseDetails} onSave={handleSave}/>
+                <EditCourseForm courseDetails={courseDetails} onSave={handleSave}/>
             </Modal>
         </div>
     );

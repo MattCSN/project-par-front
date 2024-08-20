@@ -52,3 +52,6 @@ export const updateTeeDistance = (teeId: string, distance: number) =>
 
 export const updateGolf = (golfId: string, name: string, city: string, postalCode: string, googleMapLinks: string) =>
     updateData(`/v1/golfs/${golfId}`, {name, city, postalCode, googleMapLinks}).then(data => data);
+
+export const updateCourse = (courseId: string, name: string, pitchAndPutt: boolean, compact: boolean) =>
+    updateData(`/v1/courses/${courseId}`, {name, pitchAndPutt, compact}).then(data => data);

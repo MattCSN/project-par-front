@@ -62,7 +62,7 @@ const CourseDetails: React.FC = () => {
                         <GolfDetailsCard courseDetails={courseDetails.golf}/>
                     </div>
                     <div className="course-details-holes-info">
-                        <HolesCard courseDetails={courseDetails}/>
+                        <HolesCard details={courseDetails}/>
                     </div>
                 </div>
             </div>
