@@ -9,7 +9,7 @@ import EditIcon from "../../assets/svg/icons/edit-white.svg";
 import {Modal} from "../Modal/Modal.tsx";
 import {useState} from "react";
 import {EditCourseForm} from "../EditCourseForm/EditCourseForm.tsx";
-import {updateCourse} from "../../services/courseService.ts";
+import {updateCourse, updateCourseColors} from "../../services/courseService.ts";
 
 interface HolesCardProps {
     details: CourseProps;
@@ -19,9 +19,10 @@ export function HolesCard({details}: HolesCardProps) {
     const [isModalVisible, setModalVisible] = useState(false);
     const [courseDetails, setCourseDetails] = useState(details);
 
-    const handleSave = async (updatedDetails: CourseProps) => {
+    const handleSave = async (updatedDetails: CourseProps, updatedColors: string[]) => {
         setModalVisible(false);
         await updateCourse(updatedDetails.id, updatedDetails.name, updatedDetails.pitchAndPutt, updatedDetails.compact);
+        await updateCourseColors(updatedDetails.id, updatedColors);
         setCourseDetails(updatedDetails);
     };
 
