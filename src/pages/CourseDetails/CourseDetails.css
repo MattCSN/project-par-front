@@ -47,4 +47,8 @@
     .course-details-back {
         padding: 40px 16px 0;
     }
+
+    .course-details-golf-info {
+        flex-direction: column-reverse;
+    }
 }
