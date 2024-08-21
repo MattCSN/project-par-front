@@ -22,4 +22,13 @@
         flex-direction: column;
         gap: 24px;
     }
+
+    .edit-golf-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .edit-golf-buttons button {
+        width: 100%;
+    }
 }
