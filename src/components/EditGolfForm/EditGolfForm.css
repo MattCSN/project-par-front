@@ -16,3 +16,10 @@
 
     padding-top: 8px;
 }
+
+@media screen and (max-width: 768px) {
+    .edit-golf-address {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
