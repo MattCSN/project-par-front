@@ -46,3 +46,9 @@
     border: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+        border-radius: 0;
+    }
+}

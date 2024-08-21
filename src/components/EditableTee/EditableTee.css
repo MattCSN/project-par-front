@@ -35,3 +35,14 @@
     align-items: center;
     gap: 12px;
 }
+
+@media screen and (max-width: 768px) {
+    .editable-tee-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .editable-tee-container h6 {
+        width: 100%;
+    }
+}
