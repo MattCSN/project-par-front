@@ -1,5 +1,4 @@
 
-
 .course-card-selector-container {
     max-width: 400px;
     width: 100%;
@@ -24,7 +23,7 @@
     padding: 0 24px;
 }
 
-.course-card-selector-fields{
+.course-card-selector-fields {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -34,5 +33,9 @@
     .course-card-selector-container {
         max-width: 100vw;
         border-radius: 0;
+    }
+
+    .course-card-selector-container h2 {
+        padding: 0 16px;
     }
 }

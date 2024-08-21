@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 580px;
     background-color: #fff;
-    padding: 24px;
+    padding: 24px 24px 0;
     box-sizing: border-box;
 
     border-radius: 8px;
@@ -42,6 +42,7 @@
         max-width: 100vw;
         border-radius: 0;
 
+        padding: 24px 16px 0;
         margin-bottom: 44px;
     }
 }

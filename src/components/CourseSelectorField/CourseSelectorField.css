@@ -1,5 +1,4 @@
 
-
 .course-selector-field-container {
     padding: 8px 24px;
 }
@@ -29,4 +28,14 @@
 
 .course-selector-field-container:not(.active) {
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .course-selector-field-container {
+        padding: 8px 16px;
+    }
+
+    .course-selector-field-container.active {
+        padding: 8px 13px;
+    }
 }
