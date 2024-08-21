@@ -1,5 +1,4 @@
 
-
 .course-details-content {
     max-width: 1000px;
     width: 100%;
@@ -38,4 +37,14 @@
     text-align: left;
 
     color: #041213;
+}
+
+@media screen and (max-width: 768px) {
+    .course-details-content {
+        padding: 0;
+    }
+
+    .course-details-back {
+        padding: 40px 16px 0;
+    }
 }

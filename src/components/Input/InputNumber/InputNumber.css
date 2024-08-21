@@ -31,3 +31,9 @@
     border: 2px solid var(--color-primary);
     padding: 14px;
 }
+
+@media screen and (max-width: 768px) {
+    .input-number-input {
+        min-width: 24px;
+    }
+}

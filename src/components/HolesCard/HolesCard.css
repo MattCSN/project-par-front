@@ -1,5 +1,4 @@
 
-
 .holes-card-container {
     width: 100%;
     max-width: 580px;
@@ -36,4 +35,13 @@
     gap: 8px;
     max-width: 100%;
     flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    .holes-card-container {
+        max-width: 100vw;
+        border-radius: 0;
+
+        margin-bottom: 44px;
+    }
 }

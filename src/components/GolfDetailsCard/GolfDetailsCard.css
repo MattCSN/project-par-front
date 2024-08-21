@@ -34,3 +34,10 @@
     line-height: 30px;
     text-align: left;
 }
+
+@media screen and (max-width: 768px) {
+    .golf-details-cards-container {
+        max-width: 100vw;
+        border-radius: 0;
+    }
+}

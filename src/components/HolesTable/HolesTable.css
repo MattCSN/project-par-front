@@ -77,3 +77,23 @@
 
     color: #041213;
 }
+
+@media screen and (max-width: 768px) {
+    .holes-table {
+        table-layout: auto;
+    }
+
+
+    .holes-table-column-hole, .holes-table-column-par, .holes-table-column-tee {
+        width: auto;
+    }
+
+    .holes-table-title {
+        min-width: 64px;
+    }
+
+    .holes-table-column-par div.holes-table-column-par {
+        padding-right: 24px;
+    }
+
+}
