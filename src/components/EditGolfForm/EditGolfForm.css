@@ -24,7 +24,7 @@
     }
 
     .edit-golf-buttons {
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 16px;
     }
 
