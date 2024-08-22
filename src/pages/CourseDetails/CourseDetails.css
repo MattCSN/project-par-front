@@ -50,6 +50,6 @@
 
     .course-details-golf-info {
         flex-direction: column-reverse;
-        gap: 24px;
+        gap: 20px;
     }
 }
