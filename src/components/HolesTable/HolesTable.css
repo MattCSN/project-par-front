@@ -1,7 +1,7 @@
 .holes-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Ensure fixed layout for table */
+    table-layout: fixed;
 }
 
 .holes-table-column-par div.holes-table-column-par {
