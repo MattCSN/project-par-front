@@ -5,7 +5,7 @@ interface InputCheckboxesProps {
     title: string;
     values: Map<string, boolean>;
     onUpdate: (key: string, newValue: boolean) => void;
-    twoColumns?: boolean; // New prop
+    twoColumns?: boolean;
 }
 
 export const InputCheckboxes = ({title, values, onUpdate, twoColumns = false}: InputCheckboxesProps) => {

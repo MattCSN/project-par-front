@@ -1,4 +1,3 @@
-// src/components/Modal/Modal.tsx
 import React from "react";
 import "./Modal.css";
 

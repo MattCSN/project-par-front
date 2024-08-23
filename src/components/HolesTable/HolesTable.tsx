@@ -1,8 +1,8 @@
 import "./HolesTable.css"
 import {HoleDetailsProps} from "../../services/types.ts";
 import {EditableTee} from "../EditableTee/EditableTee.tsx";
-import {InputNumber} from "../Input/InputNumber/InputNumber.tsx";
 import {updateHolePar} from "../../services/courseService.ts";
+import InputNumber from "../Input/InputNumber/InputNumber.tsx";
 
 interface HolesTableProps {
     holes: HoleDetailsProps[];

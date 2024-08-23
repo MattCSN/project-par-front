@@ -1,6 +1,6 @@
-import "./InputNumber.css";
-import React, {useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import {useDebounce} from "../../../hooks/useDebounce.ts";
+import "./InputNumber.css";
 
 interface InputNumberProps {
     inputId: string;
@@ -10,18 +10,22 @@ interface InputNumberProps {
     onUpdate: (id: string, value: number) => Promise<number>;
 }
 
-export const InputNumber = ({inputId, id, defaultValue, placeHolder, onUpdate}: InputNumberProps) => {
+const InputNumber: React.FC<InputNumberProps> = ({inputId, id, defaultValue, placeHolder, onUpdate}) => {
     const [value, setValue] = useState(defaultValue);
-    const debouncedValue = useDebounce(value, 500); // Adjust the debounce timeout as needed
+    const debouncedValue = useDebounce(value, 500);
 
-    const handleUpdate = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleUpdate = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = parseFloat(event.target.value);
-        setValue(newValue);
-    };
+        if (!isNaN(newValue)) {
+            setValue(newValue);
+        }
+    }, []);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (debouncedValue !== defaultValue) {
-            onUpdate(id, debouncedValue);
+            onUpdate(id, debouncedValue).catch((error) => {
+                console.error("Update failed:", error);
+            });
         }
     }, [debouncedValue, id, defaultValue, onUpdate]);
 
@@ -38,3 +42,5 @@ export const InputNumber = ({inputId, id, defaultValue, placeHolder, onUpdate}: 
         </div>
     );
 };
+
+export default InputNumber;

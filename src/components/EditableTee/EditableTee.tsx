@@ -1,6 +1,6 @@
 import "./EditableTee.css";
-import {InputNumber} from "../Input/InputNumber/InputNumber.tsx";
 import {updateTeeDistance} from "../../services/courseService.ts";
+import InputNumber from "../Input/InputNumber/InputNumber.tsx";
 
 interface EditableTeeProps {
     id: string;

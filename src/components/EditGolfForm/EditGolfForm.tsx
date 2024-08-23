@@ -23,9 +23,7 @@ export const EditGolfForm = ({golfDetails, onSave}: EditGolfFormProps) => {
     };
 
     const handleCancel = () => {
-        // Reset form data to initial golfDetails or perform any other cancel action
         setFormData(golfDetails);
-        console.log("Annuler");
     };
 
     return (

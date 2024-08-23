@@ -19,9 +19,7 @@ const CourseDetails: React.FC = () => {
         const fetchCourseDetails = async () => {
             if (courseId) {
                 try {
-                    console.log("Fetching course details for ID:", courseId);
                     const response: CourseProps = await getCourseDetailsById(courseId);
-                    console.log("API Response:", response);
                     setCourseDetails(response);
                 } catch (error) {
                     console.error('Failed to fetch course details:', error);
@@ -35,10 +33,6 @@ const CourseDetails: React.FC = () => {
 
         fetchCourseDetails().catch(console.error);
     }, [courseId]);
-
-    useEffect(() => {
-        console.log("Course DETAILS:", courseDetails);
-    }, [courseDetails]);
 
     if (error) {
         return <div>{error}</div>;
