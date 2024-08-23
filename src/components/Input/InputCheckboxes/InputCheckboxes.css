@@ -1,4 +1,4 @@
-.input-checkboxes, .input-checkboxes div {
+.input-checkboxes, .one-column {
     display: flex;
     flex-direction: column;
     gap: 12px;

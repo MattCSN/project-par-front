@@ -17,7 +17,7 @@ export const InputCheckboxes = ({title, values, onUpdate, twoColumns = false}: I
     return (
         <div className={`input-checkboxes`}>
             <h6>{title}</h6>
-            <div className={`${twoColumns ? 'two-columns' : ''}`}>
+            <div className={`${twoColumns ? 'two-columns' : 'one-column'}`}>
                 {Array.from(values.entries()).map(([key, value]) => (
                     <div className="input-checkbox" key={key}>
                         <label>
