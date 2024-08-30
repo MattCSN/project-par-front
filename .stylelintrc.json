@@ -1,0 +1,9 @@
+{
+  "overrides": [
+    {
+      "files": ["**/*.css"],
+      "plugins": ["stylelint-order", "stylelint-scales"],
+      "extends": ["stylelint-config-standard"]
+    }
+  ]
+}
