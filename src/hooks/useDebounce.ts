@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from "react";
 
 /**
  * Used to debounce a quickly changing value.
@@ -10,14 +10,21 @@ import {useEffect, useState} from 'react'
  * @see https://react-hooks-library.vercel.app/core/useDebounce
  */
 export function useDebounce<T>(value: T, timeout: number): Readonly<T> {
-    const [state, setState] = useState(value)
+  const [state, setState] = useState(value);
 
-    useEffect(() => {
-        const tick = setTimeout(() => setState(value), timeout)
+  useEffect(() => {
+    const tick = setTimeout(() => {
+      setState(value);
+    }, timeout);
 
-        return () => clearTimeout(tick)
-    }, [value, timeout])
+    return () => {
+      clearTimeout(tick);
+    };
+  }, [value, timeout]);
 
-    if (timeout <= 0) return value
-    return state
+  if (timeout <= 0) {
+    return value;
+  }
+
+  return state;
 }
