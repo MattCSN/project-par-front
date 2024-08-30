@@ -15,13 +15,13 @@ jobs:
           fetch-depth: 0
 
       - name: Install dependencies
-        run: npm i
+        run: pnpm i
 
       - name: Lint project-par-front
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Test project-par-front
-        run: npm run test:coverage
+        run: pnpm run test:coverage
 
       - name: Build project-par-front
-        run: npm run build
+        run: pnpm run build
