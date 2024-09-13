@@ -1,0 +1,67 @@
+.input-checkboxes, .one-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-checkboxes h6,
+.input-checkbox label {
+    font-family: Inter, serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #041213;
+}
+
+.input-checkboxes h6 {
+    font-weight: 600;
+    font-variation-settings: 'slnt' 0;
+}
+
+.input-checkbox label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.input-checkbox-input,
+.input-checkbox input {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.input-checkbox-input {
+    appearance: none;
+    top: 376px;
+    left: 24px;
+}
+
+.input-checkbox input {
+    border: 1px solid #CBD5E1;
+}
+
+.input-checkbox:hover input {
+    border-color: var(--color-primary);
+}
+
+.input-checkbox input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-checkbox input:checked::after {
+    content: url('../../../assets/svg/icons/check.svg');
+    width: 20px;
+    height: 20px;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}

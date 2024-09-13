@@ -1,0 +1,41 @@
+
+.course-card-selector-container {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    padding: 24px 0;
+    box-sizing: border-box;
+
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.course-card-selector-container h2 {
+    font-family: Inter, serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    padding: 0 24px;
+}
+
+.course-card-selector-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .course-card-selector-container {
+        max-width: 100vw;
+        border-radius: 0;
+    }
+
+    .course-card-selector-container h2 {
+        padding: 0 16px;
+    }
+}

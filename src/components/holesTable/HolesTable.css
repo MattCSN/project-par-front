@@ -1,0 +1,99 @@
+.holes-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.holes-table-column-par div.holes-table-column-par {
+    max-width: 80px;
+    padding-right: 44px;
+}
+
+.holes-table-column-hole {
+    width: 104px;
+}
+
+.holes-table-column-par {
+    width: 124px;
+}
+
+.holes-table-column-tee {
+    width: 304px;
+}
+
+.holes-table-row {
+    border-top: 1px solid #E2E8F0;
+    margin-top: 20px;
+}
+
+.holes-table-title {
+    padding-bottom: 24px;
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    font-variation-settings: 'slnt' 0;
+
+    color: #64748B;
+}
+
+.holes-table-cell {
+    padding: 24px 0;
+    vertical-align: top;
+
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    font-variation-settings: 'slnt' 0;
+
+    color: #041213;
+}
+
+.holes-table-data-tees {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.holes-table-par {
+    padding-right: 44px;
+}
+
+.holes-table-cell h5 {
+    padding: 16px 24px 16px 0;
+
+    font-family: Inter, serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    font-variation-settings: 'slnt' 0;
+
+    color: #041213;
+}
+
+@media screen and (max-width: 768px) {
+    .holes-table {
+        table-layout: auto;
+    }
+
+
+    .holes-table-column-hole, .holes-table-column-par, .holes-table-column-tee {
+        width: auto;
+    }
+
+    .holes-table-title {
+        min-width: 64px;
+    }
+
+    .holes-table-column-par div.holes-table-column-par {
+        padding-right: 24px;
+    }
+
+}

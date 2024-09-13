@@ -1,0 +1,31 @@
+
+
+.paginator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 64px;
+}
+
+.paginator-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.paginator-current {
+    font: var(--font-weight-bold) var(--font-size-medium)/var(--line-height-medium) var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    text-align: center;
+    font-variation-settings: 'slnt' 0;
+    margin: 0;
+    color: var(--color-text-primary);
+}
+
+@media screen and (max-width: 768px) {
+    .paginator-container {
+        padding-bottom: 40px;
+    }
+}

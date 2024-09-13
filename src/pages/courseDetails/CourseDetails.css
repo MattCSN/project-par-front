@@ -1,0 +1,55 @@
+
+.course-details-content {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px;
+    justify-content: center;
+    align-self: center;
+}
+
+.course-details-back {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.course-details-content-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course-details-golf-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.course-details-content h1 {
+    font-family: Inter, serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: left;
+
+    color: #041213;
+}
+
+@media screen and (max-width: 768px) {
+    .course-details-content {
+        padding: 0;
+    }
+
+    .course-details-back {
+        padding: 40px 16px 0;
+    }
+
+    .course-details-golf-info {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+}

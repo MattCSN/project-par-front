@@ -1,0 +1,24 @@
+.edit-course-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.edit-course-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+
+    padding-top: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .edit-course-buttons {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .edit-course-buttons button {
+        width: 100%;
+    }
+}

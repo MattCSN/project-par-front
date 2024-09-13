@@ -1,0 +1,19 @@
+
+.primary-button {
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    box-shadow: var(--box-shadow);
+    color: var(--color-background);
+}
+
+.primary-button[disabled] {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+}
+
+.primary-button:hover {
+    background: var(--color-primary);
+}
+
+.primary-button:active {
+    background: var(--color-secondary);
+}

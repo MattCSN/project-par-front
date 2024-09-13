@@ -1,0 +1,17 @@
+
+.button {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: var(--border-radius-large);
+    font: var(--font-weight-bold) var(--font-size-small)/var(--line-height-medium) var(--font-family);
+    letter-spacing: var(--letter-spacing);
+    text-align: center;
+    align-items: center;
+    font-variation-settings: 'slnt' 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}

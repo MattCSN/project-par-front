@@ -1,0 +1,31 @@
+
+
+.small-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 88px;
+    padding: 24px;
+    gap: 0;
+    border-bottom: 1px solid #E2E8F0;
+
+    background: #FFFFFF;
+
+    box-sizing: border-box;
+}
+
+.small-header-content {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.small-header-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

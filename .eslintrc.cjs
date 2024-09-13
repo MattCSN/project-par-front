@@ -21,7 +21,7 @@ module.exports = {
       version: "detect",
     },
   },
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", "jest-extended.d.ts"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "./tsconfig.json",

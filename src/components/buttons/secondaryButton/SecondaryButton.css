@@ -1,0 +1,25 @@
+
+.secondary-button {
+    background: #FFFFFF;
+
+    border: 1px solid #B8E0DD;
+
+    box-shadow: 0 3px 8px 0 #0412130A;
+
+    font-family: Inter, serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+    color: #004540;
+}
+
+.secondary-button:hover {
+    background: #E6F4F3;
+}
+
+.secondary-button:active {
+    border: 1px solid #7EB4B0
+}

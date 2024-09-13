@@ -1,0 +1,34 @@
+.edit-golf-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.edit-golf-address {
+    display: flex;
+    gap: 16px;
+}
+
+.edit-golf-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+
+    padding-top: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .edit-golf-address {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .edit-golf-buttons {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    .edit-golf-buttons button {
+        width: 100%;
+    }
+}
